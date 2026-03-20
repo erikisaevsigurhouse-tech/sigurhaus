@@ -286,22 +286,24 @@ footer{background:var(--bg-deep);padding:44px 48px}
 <!-- Mobile overlay -->
 <div class="mob-ov" id="mobOv">
   <button class="mob-x" onclick="closeMob()">✕</button>
-  <a href="#services" onclick="closeMob()" data-t="nav.svc">Послуги</a>
   <a href="#projects" onclick="closeMob()" data-t="nav.proj">Портфоліо</a>
+  <a href="#services" onclick="closeMob()" data-t="nav.svc">Послуги</a>
   <a href="#how" onclick="closeMob()" data-t="nav.how">Як це працює</a>
   <a href="#faq" onclick="closeMob()">FAQ</a>
-  <a href="#contact" onclick="closeMob()" data-t="nav.cta">Контакти</a>
+  <a href="#contact" onclick="closeMob()" data-t="nav.ct">Контакти</a>
+  <a href="#loc" onclick="closeMob()" data-t="nav.loc">Локація</a>
 </div>
 
 <!-- NAV -->
 <nav id="nav">
   <a href="#" class="logo">Sigur<b>.</b>Haus</a>
   <ul class="nav-links">
-    <li><a href="#services" data-t="nav.svc">Послуги</a></li>
     <li><a href="#projects" data-t="nav.proj">Портфоліо</a></li>
+    <li><a href="#services" data-t="nav.svc">Послуги</a></li>
     <li><a href="#how" data-t="nav.how">Як це працює</a></li>
-    <li><a href="#loc" data-t="nav.loc">Локація</a></li>
     <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact" data-t="nav.ct">Контакти</a></li>
+    <li><a href="#loc" data-t="nav.loc">Локація</a></li>
   </ul>
   <div class="nav-r">
     <div class="lang-dd" id="langDd">
@@ -343,14 +345,14 @@ footer{background:var(--bg-deep);padding:44px 48px}
   <div class="mx">
     <div class="proj-hd rv">
       <div><div class="sl" data-t="proj.label">Портфоліо</div><h2 class="st" data-t="proj.title">Реалізовані <em>проєкти</em></h2></div>
-      <span class="proj-note" data-t="proj.note">Власні фото — незабаром</span>
+      
     </div>
     <div class="pgrid rv">
-      <div class="pc"><img src="https://images.unsplash.com/photo-1591825729269-caeb344f6df2?w=900&q=82&auto=format&fit=crop" alt="Villa Split" loading="lazy"><div class="pc-ov"><div class="pc-badge badge-done" data-t="proj.done">● Завершено</div><div class="pc-name" data-t="proj.p1">Вілла Адріатік</div><div class="pc-loc">Спліт, Далмація</div><a href="#contact" class="pc-btn" data-t="proj.btn" onclick="prefill('p1')">Обговорити проєкт <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div>
-      <div class="pc"><img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=700&q=82&auto=format&fit=crop" alt="Trogir" loading="lazy"><div class="pc-ov"><div class="pc-badge badge-done" data-t="proj.done">● Завершено</div><div class="pc-name" data-t="proj.p2">Rezidencija Trogir</div><div class="pc-loc">Трогір, Хорватія</div><a href="#contact" class="pc-btn" data-t="proj.btn" onclick="prefill('p2')">Обговорити проєкт <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div>
-      <div class="pc"><img src="https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=600&q=82&auto=format&fit=crop" alt="Brela" loading="lazy"><div class="pc-ov"><div class="pc-badge badge-done" data-t="proj.done">● Завершено</div><div class="pc-name" data-t="proj.p3">Апартаменти Брела</div><div class="pc-loc">Брела, Макарська рів'єра</div><a href="#contact" class="pc-btn" data-t="proj.btn" onclick="prefill('p3')">Обговорити проєкт <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div>
-      <div class="pc"><img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=600&q=82&auto=format&fit=crop" alt="Hvar" loading="lazy"><div class="pc-ov"><div class="pc-badge badge-done" data-t="proj.done">● Завершено</div><div class="pc-name" data-t="proj.p4">Вілла на о. Хвар</div><div class="pc-loc">Хвар, Далмація</div><a href="#contact" class="pc-btn" data-t="proj.btn" onclick="prefill('p4')">Обговорити проєкт <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div>
-      <div class="pc" style="grid-column:1/-1"><img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1200&q=82&auto=format&fit=crop" alt="Sibenik" loading="lazy" style="min-height:300px"><div class="pc-ov"><div class="pc-badge badge-wip" data-t="proj.wip">● В процесі</div><div class="pc-name" data-t="proj.p5">Бутік-готель Шибеник</div><div class="pc-loc">Шибеник, Хорватія</div><a href="#contact" class="pc-btn" data-t="proj.btn" onclick="prefill('p5')">Обговорити проєкт <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div>
+      <div class="pc"><img src="https://images.unsplash.com/photo-1591825729269-caeb344f6df2?w=900&q=82&auto=format&fit=crop" alt="Villa Split" loading="lazy"><div class="pc-ov"><div class="pc-badge badge-done" data-t="proj.done">● Завершено</div><div class="pc-name" data-t="proj.p1">Вілла Адріатік</div><div class="pc-loc">Спліт, Далмація</div></div></div>
+      <div class="pc"><img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=700&q=82&auto=format&fit=crop" alt="Trogir" loading="lazy"><div class="pc-ov"><div class="pc-badge badge-done" data-t="proj.done">● Завершено</div><div class="pc-name" data-t="proj.p2">Rezidencija Trogir</div><div class="pc-loc">Трогір, Хорватія</div></div></div>
+      <div class="pc"><img src="https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=600&q=82&auto=format&fit=crop" alt="Brela" loading="lazy"><div class="pc-ov"><div class="pc-badge badge-done" data-t="proj.done">● Завершено</div><div class="pc-name" data-t="proj.p3">Апартаменти Брела</div><div class="pc-loc">Брела, Макарська рів'єра</div></div></div>
+      <div class="pc"><img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=600&q=82&auto=format&fit=crop" alt="Hvar" loading="lazy"><div class="pc-ov"><div class="pc-badge badge-done" data-t="proj.done">● Завершено</div><div class="pc-name" data-t="proj.p4">Вілла на о. Хвар</div><div class="pc-loc">Хвар, Далмація</div></div></div>
+      <div class="pc" style="grid-column:1/-1"><img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1200&q=82&auto=format&fit=crop" alt="Sibenik" loading="lazy" style="min-height:300px"><div class="pc-ov"><div class="pc-badge badge-wip" data-t="proj.wip">● В процесі</div><div class="pc-name" data-t="proj.p5">Бутік-готель Шибеник</div><div class="pc-loc">Шибеник, Хорватія</div></div></div>
     </div>
   </div>
 </section>
@@ -503,7 +505,7 @@ footer{background:var(--bg-deep);padding:44px 48px}
 /* ═══ i18n ═══ */
 const L={
 uk:{
-"nav.svc":"Послуги","nav.proj":"Портфоліо","nav.how":"Як це працює","nav.loc":"Локація","nav.cta":"Консультація",
+"nav.svc":"Послуги","nav.proj":"Портфоліо","nav.ct":"Контакти","nav.how":"Як це працює","nav.loc":"Локація","nav.cta":"Консультація",
 "hero.chip":"Будівництво у Хорватії","hero.t1":"Будуємо","hero.t2":"на Адріатиці",
 "hero.sub":"SigurHaus — будівельна компанія на узбережжі Хорватії. Два напрямки для інвесторів: будівництво об'єктів під ключ та професійні монолітні роботи. Від фундаменту до здачі — під нашим контролем.",
 "hero.cta1":"Замовити консультацію","hero.cta2":"Наші проєкти",
@@ -546,7 +548,7 @@ uk:{
 "ft.s1":"Будівництво під ключ","ft.s2":"Монолітні роботи","ft.s3":"Консультації"
 },
 en:{
-"nav.svc":"Services","nav.proj":"Portfolio","nav.how":"How It Works","nav.loc":"Location","nav.cta":"Consultation",
+"nav.svc":"Services","nav.proj":"Portfolio","nav.ct":"Contact","nav.how":"How It Works","nav.loc":"Location","nav.cta":"Consultation",
 "hero.chip":"Construction in Croatia","hero.t1":"We Build","hero.t2":"on the Adriatic",
 "hero.sub":"SigurHaus is a construction company on the Croatian coast. Two directions for investors: turnkey construction and professional monolithic works. From foundation to handover — under our control.",
 "hero.cta1":"Book Consultation","hero.cta2":"Our Projects",
@@ -589,7 +591,7 @@ en:{
 "ft.s1":"Turnkey construction","ft.s2":"Monolithic works","ft.s3":"Consultations"
 },
 hr:{
-"nav.svc":"Usluge","nav.proj":"Portfelj","nav.how":"Kako radimo","nav.loc":"Lokacija","nav.cta":"Konzultacije",
+"nav.svc":"Usluge","nav.proj":"Portfelj","nav.ct":"Kontakt","nav.how":"Kako radimo","nav.loc":"Lokacija","nav.cta":"Konzultacije",
 "hero.chip":"Građevinarstvo u Hrvatskoj","hero.t1":"Gradimo","hero.t2":"na Jadranu",
 "hero.sub":"SigurHaus je građevinska tvrtka na hrvatskoj obali. Dva smjera za investitore: gradnja pod ključ i profesionalni monolitni radovi. Od temelja do predaje — pod našom kontrolom.",
 "hero.cta1":"Zakažite konzultaciju","hero.cta2":"Naši projekti",
@@ -651,45 +653,57 @@ hr:[
 
 const FAQ={
 uk:[
-{q:"Які послуги надає SigurHaus?",a:"Ми спеціалізуємося на двох напрямках: будівництво об'єктів під ключ (вілли, апартаменти, комерційні об'єкти) та монолітні роботи (фундаменти, стіни, перекриття). Працюємо вздовж хорватського узбережжя."},
-{q:"Які строки будівництва об'єкта під ключ?",a:"Стандартний строк — 12–18 місяців від проєктування до здачі. Залежить від масштабу проєкту. Ми формуємо детальний графік і щомісяця звітуємо про прогрес."},
-{q:"Чи потрібна моя присутність в Хорватії?",a:"Ні — ми координуємо проєкти дистанційно. Регулярні відеозвіти, фото прогресу, онлайн-зустрічі. Рекомендуємо мінімум 1–2 візити на ключових етапах."},
-{q:"Які дозволи потрібні для будівництва?",a:"Будівельний дозвіл, дозвіл на зонування, екологічний висновок та дозвіл на введення в експлуатацію. Ми повністю беремо на себе отримання всіх документів."},
-{q:"Як формується вартість проєкту?",a:"Перед підписанням договору клієнт отримує детальний кошторис: матеріали, роботи, дозволи, непередбачені витрати. Ціна фіксується у контракті. Жодних прихованих платежів."},
-{q:"Чи працюєте ви з іноземними інвесторами?",a:"Так — більшість наших клієнтів з-за кордону. Ми допомагаємо з юридичними питаннями, оформленням документів та координацією на відстані."}
+{q:"Які послуги надає SigurHaus?",a:"Ми спеціалізуємося на двох напрямках. Перший — будівництво об'єктів під ключ: вілли, апартаменти, комерційні об'єкти. Ми ведемо проєкт від архітектурного проєктування через отримання дозволів, будівництво, оздоблення і до повної здачі з документами. Другий напрямок — монолітні роботи: фундаменти будь-якої складності, несучі стіни, перекриття, колони, сходові марші. Ми працюємо виключно власною командою без субпідрядників, що гарантує контроль якості на кожному етапі."},
+{q:"Які строки будівництва під ключ і від чого вони залежать?",a:"Стандартний строк від проєктування до здачі — 12–18 місяців. На тривалість впливають: масштаб об'єкта, складність архітектури, погодні умови та швидкість погодження дозволів з місцевими органами. Перед початком робіт ми формуємо детальний графік з контрольними точками. Щомісяця клієнт отримує звіт про прогрес з фото та відео. Ми фіксуємо строки у договорі і несемо відповідальність за їх дотримання."},
+{q:"Чи потрібна моя постійна присутність в Хорватії під час будівництва?",a:"Ні — ми повністю координуємо проєкти дистанційно. Ви отримуєте: щотижневі фотозвіти з будмайданчика, щомісячні відеозвіти від прораба, онлайн-зустрічі через Zoom/Google Meet для обговорення ключових рішень, доступ до спільного хмарного диску з усіма документами. Рекомендуємо 2–3 візити на ключових етапах: при заливці фундаменту, на етапі оздоблення та при фінальній прийомці."},
+{q:"Які дозволи потрібні для будівництва і хто їх оформлює?",a:"Для будівництва в Хорватії необхідні: дозвіл на зонування (lokacijska dozvola), будівельний дозвіл (građevinska dozvola), екологічний висновок та дозвіл на введення в експлуатацію (uporabna dozvola). Ми повністю беремо на себе весь процес: підготовку документів, подачу заяв, комунікацію з місцевими органами та контроль строків видачі. Клієнт не витрачає час на бюрократію — ми вирішуємо це під ключ."},
+{q:"Як формується вартість і чи є ризик непередбачених витрат?",a:"Перед підписанням договору клієнт отримує детальний кошторис, який включає: вартість матеріалів (із зазначенням конкретних постачальників), вартість робіт по кожному етапу, витрати на дозволи та документацію, резерв на непередбачені витрати (зазвичай 5–8%). Загальна ціна фіксується у контракті. Будь-які зміни обсягу робіт погоджуються письмово і не впливають на решту бюджету. Ми працюємо за принципом повної прозорості — клієнт бачить кожну статтю витрат."},
+{q:"Чи працюєте ви з іноземними інвесторами і яка процедура?",a:"Так — більшість наших клієнтів є іноземними інвесторами з України, Польщі, Німеччини та інших країн ЄС. Іноземці мають право купувати нерухомість та землю в Хорватії (для громадян ЄС — без обмежень, для інших — за принципом взаємності). Ми допомагаємо з: пошуком та перевіркою земельної ділянки, юридичним супроводом угоди, відкриттям OIB (податковий номер Хорватії), координацією з нотаріусом та кадастром. Вся комунікація ведеться українською, англійською або хорватською."},
+{q:"Що включає послуга монолітних робіт?",a:"Монолітні роботи — це спеціалізоване бетонування несучих конструкцій будівлі. Ми виконуємо: фундаменти (стрічкові, плитні, пальові), монолітні стіни та перегородки, міжповерхові перекриття, колони та ригелі, сходові марші та площадки. Працюємо з власною опалубкою та обладнанням. Бетон замовляємо у сертифікованих постачальників з контролем якості на кожному етапі. Монолітні роботи можна замовити як окрему послугу — якщо у вас вже є генпідрядник, але потрібна професійна бригада для бетонних робіт."},
+{q:"Яку гарантію ви даєте на виконані роботи?",a:"Ми надаємо: гарантію 10 років на конструктивні елементи (фундамент, стіни, перекриття), гарантію 5 років на покрівлю та гідроізоляцію, гарантію 2 роки на оздоблювальні роботи та інженерні мережі. Всі гарантійні умови фіксуються у договорі. Протягом гарантійного строку ми усуваємо будь-які дефекти за власний рахунок у визначені строки."}
 ],
 en:[
-{q:"What services does SigurHaus provide?",a:"We specialise in two areas: turnkey construction (villas, apartments, commercial) and monolithic works (foundations, walls, slabs). We operate along the Croatian coast."},
-{q:"What are typical construction timelines?",a:"Standard timeline is 12–18 months from design to handover. We maintain a detailed schedule and provide monthly progress updates."},
-{q:"Do I need to be present in Croatia?",a:"No — we coordinate projects remotely. Regular video reports, progress photos, online meetings. We recommend 1–2 visits at key stages."},
-{q:"What permits are required?",a:"Building permit, zoning permit, environmental clearance, and occupancy certificate. We handle the entire documentation process."},
-{q:"How is pricing structured?",a:"Before signing, you receive a detailed cost breakdown: materials, labour, permits, contingency. Price is fixed in the contract. No hidden fees."},
-{q:"Do you work with foreign investors?",a:"Yes — most of our clients are international. We assist with legal matters, documentation, and remote coordination."}
+{q:"What services does SigurHaus provide?",a:"We specialise in two areas. First — turnkey construction: villas, apartments, and commercial buildings from architectural design through permits, construction, finishing, to full handover with documentation. Second — monolithic works: foundations, load-bearing walls, slabs, columns, and staircases. We work exclusively with our in-house team, ensuring quality control at every stage."},
+{q:"What are construction timelines and what affects them?",a:"Standard timeline is 12–18 months from design to handover. Duration depends on: project scale, architectural complexity, weather conditions, and permit processing times. We create a detailed schedule with milestones, provide monthly photo and video reports, and fix deadlines in the contract."},
+{q:"Do I need to be present in Croatia during construction?",a:"No — we fully coordinate projects remotely. You receive weekly photo reports, monthly video updates, Zoom meetings for key decisions, and access to a shared cloud drive with all documents. We recommend 2–3 visits at key stages: foundation pour, finishing phase, and final acceptance."},
+{q:"What permits are required and who handles them?",a:"Construction in Croatia requires: zoning permit (lokacijska dozvola), building permit (građevinska dozvola), environmental clearance, and occupancy certificate (uporabna dozvola). We handle the entire process: document preparation, submissions, communication with authorities, and timeline management."},
+{q:"How is pricing structured — are there risks of unexpected costs?",a:"Before signing, you receive a detailed breakdown: material costs with specific suppliers, labour costs per stage, permit and documentation costs, and a contingency reserve (typically 5–8%). The total price is fixed in the contract. Any scope changes are agreed in writing. We operate on full transparency — you see every cost line."},
+{q:"Do you work with foreign investors and what is the process?",a:"Yes — most clients are foreign investors from Ukraine, Poland, Germany, and other EU countries. Foreigners can buy property and land in Croatia (EU citizens without restrictions). We help with: land search and verification, legal support, OIB tax number registration, and coordination with notaries and the land registry. Communication in Ukrainian, English, or Croatian."},
+{q:"What do monolithic works include?",a:"Monolithic works involve specialised concrete construction of load-bearing structures: foundations (strip, slab, pile), walls, floor slabs, columns, beams, and staircases. We work with our own formwork and equipment. Concrete is sourced from certified suppliers with quality control at every stage. Can be ordered as a standalone service."},
+{q:"What warranties do you provide?",a:"We offer: 10-year warranty on structural elements, 5-year warranty on roofing and waterproofing, 2-year warranty on finishing and engineering systems. All warranty terms are fixed in the contract. During the warranty period, we rectify any defects at our own expense."}
 ],
 hr:[
-{q:"Koje usluge pruža SigurHaus?",a:"Specijalizirani smo za gradnju pod ključ (vile, apartmani, komercijalni objekti) i monolitne radove (temelji, zidovi, ploče). Radimo duž hrvatske obale."},
-{q:"Koliko traje gradnja?",a:"Standardni rok je 12–18 mjeseci. Održavamo detaljan raspored i mjesečno izvještavamo o napretku."},
-{q:"Moram li biti prisutan u Hrvatskoj?",a:"Ne — koordiniramo projekte na daljinu. Redoviti video izvještaji i online sastanci. Preporučujemo 1–2 posjeta na ključnim fazama."},
-{q:"Koje dozvole su potrebne?",a:"Građevinska dozvola, lokacijska dozvola, ekološka suglasnost i uporabna dozvola. Mi preuzimamo cijeli proces."},
-{q:"Kako se formira cijena?",a:"Prije potpisivanja dobivate detaljan pregled troškova. Cijena se fiksira ugovorom. Nema skrivenih naknada."},
-{q:"Radite li sa stranim investitorima?",a:"Da — većina naših klijenata su iz inozemstva. Pomažemo s pravnim pitanjima i koordinacijom na daljinu."}
+{q:"Koje usluge pruža SigurHaus?",a:"Specijalizirani smo za dva smjera. Prvi — gradnja pod ključ: vile, apartmani i komercijalni objekti od arhitektonskog projektiranja do predaje s kompletnom dokumentacijom. Drugi — monolitni radovi: temelji, nosivi zidovi, ploče, stupovi i stubišta. Radimo isključivo s vlastitim timom bez podugovarača, što jamči kontrolu kvalitete u svakoj fazi."},
+{q:"Koliko traje gradnja pod ključ i o čemu ovisi?",a:"Standardni rok od projektiranja do predaje je 12–18 mjeseci. Trajanje ovisi o: opsegu objekta, složenosti arhitekture, vremenskim uvjetima i brzini ishođenja dozvola. Izrađujemo detaljan raspored s kontrolnim točkama, a klijent mjesečno dobiva izvještaj s fotografijama i videozapisima."},
+{q:"Moram li biti prisutan u Hrvatskoj tijekom gradnje?",a:"Ne — projekte u potpunosti koordiniramo na daljinu. Dobivate tjedne foto-izvještaje, mjesečne video-izvještaje, online sastanke putem Zooma za ključne odluke te pristup zajedničkom oblaku s dokumentacijom. Preporučujemo 2–3 posjeta u ključnim fazama."},
+{q:"Koje dozvole su potrebne i tko ih pribavlja?",a:"Za gradnju u Hrvatskoj potrebne su: lokacijska dozvola, građevinska dozvola, ekološka suglasnost i uporabna dozvola. Mi preuzimamo cijeli postupak: pripremu dokumentacije, predaju zahtjeva, komunikaciju s tijelima i kontrolu rokova."},
+{q:"Kako se formira cijena i postoji li rizik nepredviđenih troškova?",a:"Prije potpisivanja ugovora dobivate detaljan troškovnik koji uključuje: troškove materijala, troškove radova po fazama, troškove dozvola i rezervu za nepredviđeno (obično 5–8%). Ukupna cijena fiksira se ugovorom. Radimo na principu potpune transparentnosti."},
+{q:"Radite li sa stranim investitorima i kakav je postupak?",a:"Da — većina naših klijenata su strani investitori. Stranci mogu kupovati nekretnine i zemljišta u Hrvatskoj (državljani EU bez ograničenja). Pomažemo s: pronalaskom i provjerom zemljišta, pravnom podrškom, registracijom OIB-a i koordinacijom s javnim bilježnikom."},
+{q:"Što uključuju monolitni radovi?",a:"Monolitni radovi uključuju specijalizirano betoniranje nosivih konstrukcija: temelji (trakasti, pločasti, pilotski), zidovi, međukatne ploče, stupovi, grede i stubišta. Radimo s vlastitom oplatom i opremom. Beton nabavljamo od certificiranih dobavljača. Mogu se naručiti kao zasebna usluga."},
+{q:"Kakva jamstva dajete za izvedene radove?",a:"Nudimo: 10 godina jamstva na konstrukcijske elemente, 5 godina na krovište i hidroizolaciju, 2 godine na završne radove i instalacije. Svi jamstveni uvjeti utvrđeni su ugovorom."}
 ]};
 
 const LEGAL={
 uk:[
-{q:"Загальні умови використання",a:"Цей веб-сайт належить та управляється компанією SigurHaus d.o.o., зареєстрованою в Хорватії. Використовуючи сайт, ви погоджуєтесь з цими умовами. Інформація на сайті має інформаційний характер і не є публічною офертою."},
-{q:"Політика конфіденційності",a:"Ми збираємо лише ті персональні дані, які ви добровільно надаєте через форму зв'язку (ім'я, телефон, email). Дані використовуються виключно для зв'язку з вами та не передаються третім особам."},
-{q:"Відповідальність",a:"SigurHaus d.o.o. не несе відповідальності за перебої в роботі сайту або неточності в інформації. Всі проєктні деталі, строки та вартість узгоджуються індивідуально та фіксуються у договорі."}
+{q:"Загальні умови використання",a:"Цей веб-сайт належить та управляється компанією SigurHaus d.o.o., зареєстрованою в Республіці Хорватія. OIB (податковий номер): XXXXXXXXXX. Сідло: Спліт, Хорватія. Використовуючи цей сайт, ви погоджуєтесь з цими умовами. Інформація на сайті має виключно інформаційний характер і не є публічною офертою згідно із законодавством Республіки Хорватія. Всі деталі щодо послуг, строків та вартості узгоджуються індивідуально та фіксуються у двосторонньому договорі. Компанія зареєстрована у Торговому суді м. Спліт та діє відповідно до чинного законодавства РХ."},
+{q:"Політика захисту персональних даних",a:"Відповідно до Загального регламенту захисту даних (GDPR — Uredba EU 2016/679), ми збираємо лише ті персональні дані, які ви добровільно надаєте через форму зв'язку: ім'я, телефон, email. Ваші дані використовуються виключно для зв'язку з вами щодо запитуваних послуг. Ми не передаємо, не продаємо та не розкриваємо ваші дані третім особам без вашої згоди, крім випадків, передбачених законом. Дані зберігаються на захищених серверах в ЄС. Ви маєте право на доступ, виправлення, видалення ваших даних, а також право відкликати згоду в будь-який момент, надіславши запит на info@sigurhaus.hr."},
+{q:"Відповідальність та обмеження",a:"SigurHaus d.o.o. не несе відповідальності за: тимчасові перебої в роботі сайту, неточності в інформації на сайті (оскільки вона має загальний інформаційний характер), дії третіх осіб або форс-мажорні обставини. Всі проєктні зобов'язання, строки, вартість та гарантійні умови визначаються виключно у індивідуальному договорі між замовником та SigurHaus d.o.o. Договір регулюється законодавством Республіки Хорватія. У разі спорів компетентним є суд за місцем реєстрації компанії."},
+{q:"Авторські права та інтелектуальна власність",a:"Весь вміст цього веб-сайту (тексти, графіка, логотипи, дизайн, структура) є власністю SigurHaus d.o.o. та захищений авторським правом згідно з хорватським та міжнародним законодавством. Будь-яке копіювання, відтворення або поширення матеріалів сайту без письмової згоди власника заборонено. Фотографії об'єктів на сайті використовуються для ілюстрації та можуть відрізнятися від фактичного вигляду."},
+{q:"Реквізити компанії",a:"SigurHaus d.o.o. · OIB: XXXXXXXXXX · Сідло: Спліт, Хорватія · Торговий суд: Trgovački sud u Splitu · Контакт: info@sigurhaus.hr · Телефон: +385 XX XXX XXXX · IBAN: HRXXXXXXXXXXXXXXXXX · Банк: [назва банку] · SWIFT: XXXXXXXX"}
 ],
 en:[
-{q:"Terms of Use",a:"This website is owned and operated by SigurHaus d.o.o., registered in Croatia. By using this site, you agree to these terms. Information is for informational purposes and does not constitute a public offer."},
-{q:"Privacy Policy",a:"We collect only personal data you voluntarily provide via the contact form (name, phone, email). Data is used solely to contact you and is not shared with third parties."},
-{q:"Liability",a:"SigurHaus d.o.o. is not liable for website interruptions or information inaccuracies. All project details, timelines, and costs are agreed individually and fixed in contract."}
+{q:"Terms of Use",a:"This website is owned and operated by SigurHaus d.o.o., registered in the Republic of Croatia. OIB (tax ID): XXXXXXXXXX. Registered office: Split, Croatia. By using this site, you agree to these terms. All information is for informational purposes only and does not constitute a public offer under Croatian law. All service details, timelines, and costs are agreed individually and fixed in a bilateral contract. The company is registered with the Commercial Court of Split."},
+{q:"Privacy & Data Protection Policy",a:"In accordance with the General Data Protection Regulation (GDPR — EU Regulation 2016/679), we collect only personal data you voluntarily provide: name, phone, email. Data is used solely to contact you regarding requested services. We do not transfer, sell, or disclose your data to third parties without your consent, except as required by law. Data is stored on protected servers within the EU. You have the right to access, correct, delete your data, and withdraw consent at any time by emailing info@sigurhaus.hr."},
+{q:"Liability & Limitations",a:"SigurHaus d.o.o. is not liable for: temporary website disruptions, inaccuracies in site information (as it is general in nature), actions of third parties, or force majeure. All project obligations, timelines, costs, and warranty terms are defined exclusively in the individual contract. The contract is governed by the laws of the Republic of Croatia. In case of disputes, the court at the company's registered office has jurisdiction."},
+{q:"Copyright & Intellectual Property",a:"All content on this website (text, graphics, logos, design, structure) is the property of SigurHaus d.o.o. and is protected by copyright under Croatian and international law. Any copying, reproduction, or distribution without written consent is prohibited. Property photographs are illustrative and may differ from actual appearance."},
+{q:"Company Details",a:"SigurHaus d.o.o. · OIB: XXXXXXXXXX · Registered office: Split, Croatia · Commercial Court: Trgovački sud u Splitu · Contact: info@sigurhaus.hr · Phone: +385 XX XXX XXXX · IBAN: HRXXXXXXXXXXXXXXXXX · Bank: [bank name] · SWIFT: XXXXXXXX"}
 ],
 hr:[
-{q:"Uvjeti korištenja",a:"Ova web stranica je u vlasništvu tvrtke SigurHaus d.o.o., registrirane u Hrvatskoj. Korištenjem stranice prihvaćate ove uvjete."},
-{q:"Politika privatnosti",a:"Prikupljamo samo podatke koje dobrovoljno pružite putem obrasca (ime, telefon, email). Podaci se koriste isključivo za kontakt i ne dijele se s trećim stranama."},
-{q:"Odgovornost",a:"SigurHaus d.o.o. ne odgovara za prekide u radu stranice. Svi detalji projekta dogovaraju se individualno i utvrđuju ugovorom."}
+{q:"Uvjeti korištenja",a:"Ova web stranica je u vlasništvu i pod upravljanjem tvrtke SigurHaus d.o.o., registrirane u Republici Hrvatskoj. OIB: XXXXXXXXXX. Sjedište: Split, Hrvatska. Korištenjem ove stranice prihvaćate ove uvjete. Sve informacije na stranici imaju isključivo informativni karakter i ne predstavljaju javnu ponudu sukladno zakonodavstvu RH. Svi detalji o uslugama, rokovima i cijenama dogovaraju se individualno i utvrđuju dvostranskim ugovorom. Tvrtka je upisana u sudski registar Trgovačkog suda u Splitu te posluje sukladno važećem zakonodavstvu RH."},
+{q:"Politika zaštite osobnih podataka",a:"Sukladno Općoj uredbi o zaštiti podataka (GDPR — Uredba EU 2016/679), prikupljamo samo osobne podatke koje dobrovoljno pružite putem obrasca za kontakt: ime, telefon, email. Vaši podaci koriste se isključivo za kontaktiranje u vezi zatraženih usluga. Ne prenosimo, ne prodajemo niti ne otkrivamo Vaše podatke trećim stranama bez Vaše suglasnosti, osim u slučajevima propisanim zakonom. Podaci se pohranjuju na zaštićenim poslužiteljima unutar EU. Imate pravo na pristup, ispravak, brisanje Vaših podataka te pravo na povlačenje suglasnosti u bilo kojem trenutku slanjem zahtjeva na info@sigurhaus.hr."},
+{q:"Odgovornost i ograničenja",a:"SigurHaus d.o.o. ne odgovara za: privremene prekide u radu stranice, netočnosti u informacijama na stranici (budući da su općeg informativnog karaktera), radnje trećih strana ili višu silu. Sve projektne obveze, rokovi, troškovi i jamstveni uvjeti utvrđuju se isključivo individualnim ugovorom između naručitelja i SigurHaus d.o.o. Ugovor se regulira zakonodavstvom Republike Hrvatske. U slučaju sporova nadležan je sud prema sjedištu tvrtke."},
+{q:"Autorska prava i intelektualno vlasništvo",a:"Sav sadržaj ove web stranice (tekstovi, grafika, logotipi, dizajn, struktura) vlasništvo je tvrtke SigurHaus d.o.o. te je zaštićen autorskim pravom sukladno hrvatskom i međunarodnom zakonodavstvu. Svako kopiranje, reprodukcija ili distribucija materijala bez pisane suglasnosti vlasnika je zabranjeno. Fotografije objekata na stranici su ilustrativne i mogu se razlikovati od stvarnog izgleda."},
+{q:"Podaci o tvrtki",a:"SigurHaus d.o.o. · OIB: XXXXXXXXXX · Sjedište: Split, Hrvatska · Trgovački sud: Trgovački sud u Splitu · Kontakt: info@sigurhaus.hr · Telefon: +385 XX XXX XXXX · IBAN: HRXXXXXXXXXXXXXXXXX · Banka: [naziv banke] · SWIFT: XXXXXXXX · Uvid u Sudski registar: sudreg.pravosudje.hr"}
 ]};
 
 let lang='uk',curRev=0;
