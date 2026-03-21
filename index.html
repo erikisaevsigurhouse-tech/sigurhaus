@@ -204,22 +204,20 @@ section{padding:64px 48px}
 .f-ok h3{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:300;color:#fff;margin-bottom:6px}
 .f-ok p{font-size:.84rem;color:rgba(255,255,255,.3)}
 
-/* ═══ MAP ═══ */
-#loc{padding:0}
-.map-hd{background:var(--white);padding:56px 48px 36px;text-align:center}
-.map-hd .sl{justify-content:center}.map-hd .ss{margin:0 auto;text-align:center}
-.map-w{position:relative;height:380px}
-.map-w iframe{width:100%;height:100%;border:0;display:block}
-.map-chip{position:absolute;top:16px;left:16px;background:var(--white);border-radius:var(--radius-sm);padding:16px 20px;box-shadow:var(--shadow-lg);z-index:2}
-.map-chip-b{display:inline-flex;align-items:center;gap:6px;background:var(--teal-pale);border:1px solid rgba(42,124,111,.18);border-radius:100px;padding:3px 11px;font-size:.66rem;color:var(--teal);font-weight:500;letter-spacing:.07em;margin-bottom:8px}
-.map-chip-b::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--teal)}
-.map-chip h4{font-family:'Fraunces',serif;font-size:1rem;color:var(--ink);margin-bottom:3px}
-.map-chip p{font-size:.76rem;color:var(--muted);line-height:1.5}
-
-/* ═══ LEGAL (accordion like FAQ) ═══ */
+/* ═══ LEGAL ═══ */
 #legal{background:var(--bg-warm);padding:44px 48px}
-.legal-in{max-width:760px;margin:0 auto}
-.legal-hd{text-align:center;margin-bottom:36px}
+.legal-in{max-width:820px;margin:0 auto}
+.legal-hd{text-align:center;margin-bottom:32px}
+.leg-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:32px;box-shadow:var(--shadow-sm)}
+.leg-card-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:36px}
+.leg-block h4{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);font-weight:600;margin-bottom:14px;padding-bottom:8px;border-bottom:1.5px solid var(--teal-pale)}
+.leg-full{font-size:.82rem;color:var(--mid);line-height:1.6;margin-bottom:16px;font-style:italic}
+.leg-rows{display:flex;flex-direction:column;gap:6px}
+.leg-row{display:flex;gap:8px;font-size:.82rem;line-height:1.5}
+.leg-k{color:var(--muted);flex-shrink:0;min-width:110px;font-weight:500}
+.leg-v{color:var(--ink)}
+.leg-v a{color:var(--teal);text-decoration:underline;text-decoration-color:rgba(42,124,111,.3);text-underline-offset:2px;transition:text-decoration-color .2s}
+.leg-v a:hover{text-decoration-color:var(--teal)}
 
 /* ═══ FOOTER ═══ */
 footer{background:var(--bg-deep);padding:44px 48px}
@@ -244,7 +242,9 @@ footer{background:var(--bg-deep);padding:44px 48px}
   .steps{grid-template-columns:repeat(2,1fr)}.feats{grid-template-columns:1fr 1fr}
   .svc-grid{grid-template-columns:1fr;gap:14px}
   .ct-grid{grid-template-columns:1fr;gap:40px}.ft-grid{grid-template-columns:1fr 1fr;gap:32px}
-  .map-hd{padding:44px 32px 28px}#reviews{padding:44px 32px}#legal{padding:36px 32px}footer{padding:36px 32px}
+  .map-hd{padding:44px 32px 28px}#reviews{padding:44px 32px}#legal{padding:36px 32px}
+  .leg-card-grid{grid-template-columns:1fr}
+  .leg-card{padding:24px 20px}footer{padding:36px 32px}
 }
 @media(max-width:768px){
   nav{padding:0 20px}.nav-links,.btn-nav{display:none}.hamburger{display:flex}
@@ -259,7 +259,10 @@ footer{background:var(--bg-deep);padding:44px 48px}
   .map-hd{padding:36px 20px 24px}.map-w{height:260px}
   #reviews{padding:36px 20px}.rev-text{font-size:1.15rem;min-height:100px}
   #contact{padding:40px 20px}.fpanel{padding:24px 18px;border-radius:14px}
-  #legal{padding:28px 20px}footer{padding:28px 20px}
+  #legal{padding:28px 20px}
+  .leg-card{padding:20px 16px}
+  .leg-k{min-width:90px;font-size:.76rem}
+  .leg-v{font-size:.76rem}footer{padding:28px 20px}
 }
 @media(max-width:420px){
   .hero-ct{padding:calc(var(--nav-h) + 20px) 16px 28px}.hero-h{font-size:1.9rem}
@@ -291,7 +294,6 @@ footer{background:var(--bg-deep);padding:44px 48px}
   <a href="#how" onclick="closeMob()" data-t="nav.how">Як це працює</a>
   <a href="#faq" onclick="closeMob()">FAQ</a>
   <a href="#contact" onclick="closeMob()" data-t="nav.ct">Контакти</a>
-  <a href="#loc" onclick="closeMob()" data-t="nav.loc">Локація</a>
 </div>
 
 <!-- NAV -->
@@ -303,7 +305,6 @@ footer{background:var(--bg-deep);padding:44px 48px}
     <li><a href="#how" data-t="nav.how">Як це працює</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact" data-t="nav.ct">Контакти</a></li>
-    <li><a href="#loc" data-t="nav.loc">Локація</a></li>
   </ul>
   <div class="nav-r">
     <div class="lang-dd" id="langDd">
@@ -468,17 +469,47 @@ footer{background:var(--bg-deep);padding:44px 48px}
   </div>
 </section>
 
-<!-- ═══ MAP ═══ -->
-<section id="loc" style="padding:0">
-  <div class="map-hd"><div class="sl" data-t="map.label">Де ми знаходимось</div><h2 class="st rv" data-t="map.title">Хорватія — <em>серце Адріатики</em></h2><p class="ss rv" data-t="map.sub">Наші проєкти реалізовані вздовж Далматинського узбережжя.</p></div>
-  <div class="map-w"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d186736.28!2d16.43!3d43.51!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13355dfc5e76a2cd%3A0x8ceba7faefd45cac!2sSplit%2C%20Croatia!5e0!3m2!1sen!2shr!4v1699999999999" allowfullscreen loading="lazy" title="SigurHaus map"></iframe><div class="map-chip"><div class="map-chip-b">SigurHaus</div><h4>Хорватія, Спліт</h4><p data-t="map.chip">1 700+ км берегової лінії · 1 200+ островів</p></div></div>
-</section>
+
 
 <!-- ═══ LEGAL ═══ -->
 <section id="legal">
   <div class="mx legal-in">
     <div class="legal-hd"><div class="sl" data-t="leg.label">Юридична інформація</div><h2 class="st rv" data-t="leg.title">Правові <em>умови</em></h2></div>
-    <div id="legalList" class="rv"></div>
+    
+    <!-- Company details card -->
+    <div class="leg-card rv">
+      <div class="leg-card-grid">
+        <div class="leg-block">
+          <h4 data-t="leg.comp">Podaci o društvu</h4>
+          <p class="leg-full" data-t="leg.compFull">SIGURHAUS društvo s ograničenom odgovornošću za graditeljstvo i usluge</p>
+          <div class="leg-rows">
+            <div class="leg-row"><span class="leg-k">Skraćeni naziv:</span><span class="leg-v">SIGURHAUS d.o.o.</span></div>
+            <div class="leg-row"><span class="leg-k">Sjedište:</span><span class="leg-v" data-t="leg.addr">Vukovarska 124, 21000 Split, Hrvatska</span></div>
+            <div class="leg-row"><span class="leg-k">OIB:</span><span class="leg-v">12345678901</span></div>
+            <div class="leg-row"><span class="leg-k">MBS:</span><span class="leg-v">060123456</span></div>
+            <div class="leg-row"><span class="leg-k" data-t="leg.court">Trgovački sud:</span><span class="leg-v" data-t="leg.courtVal">Trgovački sud u Splitu</span></div>
+            <div class="leg-row"><span class="leg-k" data-t="leg.capital">Temeljni kapital:</span><span class="leg-v">2.500,00 EUR (uplaćen u cijelosti)</span></div>
+            <div class="leg-row"><span class="leg-k" data-t="leg.director">Član uprave:</span><span class="leg-v">Erik Isaev</span></div>
+          </div>
+        </div>
+        <div class="leg-block">
+          <h4 data-t="leg.contact">Kontakt</h4>
+          <div class="leg-rows">
+            <div class="leg-row"><span class="leg-k">E-mail:</span><span class="leg-v"><a href="mailto:info@sigurhaus.hr">info@sigurhaus.hr</a></span></div>
+            <div class="leg-row"><span class="leg-k" data-t="leg.phone">Telefon:</span><span class="leg-v">+385 XX XXX XXXX</span></div>
+          </div>
+          <h4 style="margin-top:20px" data-t="leg.bank">Banka i račun</h4>
+          <div class="leg-rows">
+            <div class="leg-row"><span class="leg-k">IBAN:</span><span class="leg-v">HR12 2340 0091 1234 5678 9</span></div>
+            <div class="leg-row"><span class="leg-k" data-t="leg.bankName">Naziv banke:</span><span class="leg-v">Privredna banka Zagreb d.d.</span></div>
+            <div class="leg-row"><span class="leg-k">SWIFT:</span><span class="leg-v">PBZGHR2X</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Accordion sections -->
+    <div id="legalList" class="rv" style="margin-top:20px"></div>
   </div>
 </section>
 
@@ -489,7 +520,7 @@ footer{background:var(--bg-deep);padding:44px 48px}
     <div class="ft-col"><h6 data-t="ft.c1">Компанія</h6><ul><li><a href="#services" data-t="nav.svc">Послуги</a></li>
     <li><a href="#projects" data-t="nav.proj">Портфоліо</a></li><li><a href="#how" data-t="nav.how">Як це працює</a></li><li><a href="#faq">FAQ</a></li></ul></div>
     <div class="ft-col"><h6 data-t="ft.c2">Послуги</h6><ul><li><a href="#contact" data-t="ft.s1">Будівництво під ключ</a></li><li><a href="#contact" data-t="ft.s2">Монолітні роботи</a></li><li><a href="#contact" data-t="ft.s3">Консультації</a></li></ul></div>
-    <div class="ft-col"><h6 data-t="ft.c3">Контакти</h6><ul><li><a href="mailto:info@sigurhaus.hr">info@sigurhaus.hr</a></li><li><a href="tel:+38500000000">+385 XX XXX XXXX</a></li><li><a href="#loc" data-t="ct.addr">Хорватія, Спліт</a></li></ul></div>
+    <div class="ft-col"><h6 data-t="ft.c3">Контакти</h6><ul><li><a href="mailto:info@sigurhaus.hr">info@sigurhaus.hr</a></li><li><a href="tel:+38500000000">+385 XX XXX XXXX</a></li><li><a href="#contact" data-t="ct.addr">Хорватія, Спліт</a></li></ul></div>
   </div>
   <div class="ft-bot">
     <p>© 2024 SigurHaus. All rights reserved.</p>
@@ -505,13 +536,13 @@ footer{background:var(--bg-deep);padding:44px 48px}
 /* ═══ i18n ═══ */
 const L={
 uk:{
-"nav.svc":"Послуги","nav.proj":"Портфоліо","nav.ct":"Контакти","nav.how":"Як це працює","nav.loc":"Локація","nav.cta":"Консультація",
+"nav.svc":"Послуги","nav.proj":"Портфоліо","nav.ct":"Контакти","nav.how":"Як це працює","nav.cta":"Консультація",
 "hero.chip":"Будівництво у Хорватії","hero.t1":"Будуємо","hero.t2":"на Адріатиці",
 "hero.sub":"SigurHaus — будівельна компанія на узбережжі Хорватії. Два напрямки для інвесторів: будівництво об'єктів під ключ та професійні монолітні роботи. Від фундаменту до здачі — під нашим контролем.",
 "hero.cta1":"Замовити консультацію","hero.cta2":"Наші проєкти",
 "hero.s1":"Залучених інвестицій","hero.s2":"Об'єктів монолітних робіт","hero.s3":"Проєктів здано в строк",
-"proj.label":"Портфоліо","proj.title":"Реалізовані проєкти","proj.note":"Власні фото — незабаром",
-"proj.done":"● Завершено","proj.wip":"● В процесі","proj.btn":"Обговорити проєкт",
+"proj.label":"Портфоліо","proj.title":"Реалізовані проєкти",
+"proj.done":"● Завершено","proj.wip":"● В процесі",
 "proj.p1":"Вілла Адріатік","proj.p2":"Rezidencija Trogir","proj.p3":"Апартаменти Брела","proj.p4":"Вілла на о. Хвар","proj.p5":"Бутік-готель Шибеник",
 "how.label":"Як це працює","how.t1":"Простий процес —","how.t2":"від ідеї до об'єкта",
 "how.sub":"Від першої консультації до здачі готового об'єкта — чотири прозорих кроки.",
@@ -541,20 +572,20 @@ uk:{
 "fm.time":"Зручний час","fm.time0":"Оберіть час",
 "fm.msg":"Деталі проєкту","fm.send":"Замовити консультацію","fm.fine":"Ми не передаємо ваші дані третім особам",
 "fm.okt":"Дякуємо!","fm.okd":"Ваша заявка прийнята. Ми зв'яжемося впродовж 24 годин.",
-"map.label":"Де ми знаходимось","map.title":"Хорватія — серце Адріатики","map.sub":"Наші проєкти реалізовані вздовж Далматинського узбережжя.","map.chip":"1 700+ км берегової лінії · 1 200+ островів",
+
 "leg.label":"Юридична інформація","leg.title":"Правові умови",
 "ft.brand":"Будівництво під ключ та монолітні роботи на Адріатичному узбережжі Хорватії.",
 "ft.c1":"Компанія","ft.c2":"Послуги","ft.c3":"Контакти",
 "ft.s1":"Будівництво під ключ","ft.s2":"Монолітні роботи","ft.s3":"Консультації"
 },
 en:{
-"nav.svc":"Services","nav.proj":"Portfolio","nav.ct":"Contact","nav.how":"How It Works","nav.loc":"Location","nav.cta":"Consultation",
+"nav.svc":"Services","nav.proj":"Portfolio","nav.ct":"Contact","nav.how":"How It Works","nav.cta":"Consultation",
 "hero.chip":"Construction in Croatia","hero.t1":"We Build","hero.t2":"on the Adriatic",
 "hero.sub":"SigurHaus is a construction company on the Croatian coast. Two directions for investors: turnkey construction and professional monolithic works. From foundation to handover — under our control.",
 "hero.cta1":"Book Consultation","hero.cta2":"Our Projects",
 "hero.s1":"Investments attracted","hero.s2":"Monolithic work objects","hero.s3":"Projects delivered on time",
-"proj.label":"Portfolio","proj.title":"Completed Projects","proj.note":"Own photos — coming soon",
-"proj.done":"● Completed","proj.wip":"● In Progress","proj.btn":"Discuss Project",
+"proj.label":"Portfolio","proj.title":"Completed Projects",
+"proj.done":"● Completed","proj.wip":"● In Progress",
 "proj.p1":"Villa Adriatic","proj.p2":"Rezidencija Trogir","proj.p3":"Apartments Brela","proj.p4":"Villa on Hvar","proj.p5":"Boutique Hotel Šibenik",
 "how.label":"How It Works","how.t1":"Simple process —","how.t2":"from idea to completion",
 "how.sub":"From first consultation to finished property — four transparent steps.",
@@ -584,20 +615,20 @@ en:{
 "fm.time":"Preferred time","fm.time0":"Select time",
 "fm.msg":"Project details","fm.send":"Book Consultation","fm.fine":"We don't share your data with third parties",
 "fm.okt":"Thank You!","fm.okd":"Request received. We'll contact you within 24 hours.",
-"map.label":"Our Location","map.title":"Croatia — Heart of the Adriatic","map.sub":"Our projects along the Dalmatian coastline.","map.chip":"1,700+ km coastline · 1,200+ islands",
+
 "leg.label":"Legal Information","leg.title":"Legal Terms",
 "ft.brand":"Turnkey construction and monolithic works on the Adriatic coast of Croatia.",
 "ft.c1":"Company","ft.c2":"Services","ft.c3":"Contact",
 "ft.s1":"Turnkey construction","ft.s2":"Monolithic works","ft.s3":"Consultations"
 },
 hr:{
-"nav.svc":"Usluge","nav.proj":"Portfelj","nav.ct":"Kontakt","nav.how":"Kako radimo","nav.loc":"Lokacija","nav.cta":"Konzultacije",
+"nav.svc":"Usluge","nav.proj":"Portfelj","nav.ct":"Kontakt","nav.how":"Kako radimo","nav.cta":"Konzultacije",
 "hero.chip":"Građevinarstvo u Hrvatskoj","hero.t1":"Gradimo","hero.t2":"na Jadranu",
 "hero.sub":"SigurHaus je građevinska tvrtka na hrvatskoj obali. Dva smjera za investitore: gradnja pod ključ i profesionalni monolitni radovi. Od temelja do predaje — pod našom kontrolom.",
 "hero.cta1":"Zakažite konzultaciju","hero.cta2":"Naši projekti",
 "hero.s1":"Privučenih investicija","hero.s2":"Monolitnih objekata","hero.s3":"Projekata predano na vrijeme",
-"proj.label":"Portfelj","proj.title":"Realizirani projekti","proj.note":"Vlastite fotografije — uskoro",
-"proj.done":"● Završeno","proj.wip":"● U tijeku","proj.btn":"Razgovarajmo",
+"proj.label":"Portfelj","proj.title":"Realizirani projekti",
+"proj.done":"● Završeno","proj.wip":"● U tijeku",
 "proj.p1":"Vila Jadran","proj.p2":"Rezidencija Trogir","proj.p3":"Apartmani Brela","proj.p4":"Vila na Hvaru","proj.p5":"Boutique hotel Šibenik",
 "how.label":"Kako radimo","how.t1":"Jednostavan proces —","how.t2":"od ideje do objekta",
 "how.sub":"Od prve konzultacije do predaje gotovog objekta — četiri transparentna koraka.",
@@ -627,7 +658,7 @@ hr:{
 "fm.time":"Željeno vrijeme","fm.time0":"Odaberite vrijeme",
 "fm.msg":"Detalji projekta","fm.send":"Zakažite konzultaciju","fm.fine":"Ne dijelimo podatke s trećima",
 "fm.okt":"Hvala!","fm.okd":"Upit primljen. Javit ćemo se u 24h.",
-"map.label":"Gdje smo","map.title":"Hrvatska — srce Jadrana","map.sub":"Naši projekti duž dalmatinske obale.","map.chip":"1.700+ km obale · 1.200+ otoka",
+
 "leg.label":"Pravne informacije","leg.title":"Pravni uvjeti",
 "ft.brand":"Gradnja pod ključ i monolitni radovi na jadranskoj obali Hrvatske.",
 "ft.c1":"Tvrtka","ft.c2":"Usluge","ft.c3":"Kontakt",
