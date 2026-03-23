@@ -98,7 +98,7 @@ section{padding:64px 48px}
 .proj-note{font-size:.82rem;color:var(--muted)}
 .pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
 .pc{overflow:hidden;border-radius:var(--radius);position:relative;cursor:pointer;background:var(--bg-warm)}
-.pc img{width:100%;height:100%;object-fit:cover;min-height:220px;filter:brightness(.78) saturate(.75);transition:transform .6s,filter .4s}
+.pc img{width:100%;height:240px;object-fit:cover;filter:brightness(.78) saturate(.75);transition:transform .6s,filter .4s}
 .pc:hover img{transform:scale(1.05);filter:brightness(.9) saturate(.95)}
 .pc-ov{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:18px;background:linear-gradient(to top,rgba(10,22,18,.82) 0%,transparent 55%);transition:background .3s}
 .pc:hover .pc-ov{background:linear-gradient(to top,rgba(10,22,18,.9) 0%,rgba(10,22,18,.05) 65%)}
@@ -152,50 +152,57 @@ section{padding:64px 48px}
 .rev-wrap .sl{justify-content:center;color:rgba(255,255,255,.35)}.rev-wrap .sl::before{background:rgba(255,255,255,.2)}
 .rev-text{font-family:'Fraunces',serif;font-size:clamp(1.25rem,2.4vw,1.9rem);font-weight:300;color:#fff;font-style:italic;line-height:1.45;margin-bottom:18px;min-height:100px;transition:opacity .4s}
 .rev-author{font-size:.82rem;color:rgba(255,255,255,.32);letter-spacing:.06em;margin-bottom:24px}
+/* Review arrows */
+.rev-nav{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:24px}
+.rev-arr{width:36px;height:36px;border-radius:50%;border:1.5px solid rgba(255,255,255,.15);background:transparent;color:rgba(255,255,255,.4);display:flex;align-items:center;justify-content:center;transition:all .25s;padding:0}
+.rev-arr:hover{border-color:var(--teal-lt);color:var(--teal-lt);background:rgba(56,160,143,.1)}
 .rev-dots{display:flex;justify-content:center;gap:8px}
 .rdot{width:10px;height:10px;border-radius:50%;border:1.5px solid rgba(255,255,255,.25);background:transparent;padding:0;transition:all .25s}
 .rdot.on{background:var(--teal-lt);border-color:var(--teal-lt)}.rdot:hover{border-color:var(--teal-lt)}
 
 /* ═══ FAQ ═══ */
-#faq{background:var(--bg)}
+#faq{background:var(--bg);padding-top:48px;padding-bottom:48px}
 .faq-in{max-width:760px;margin:0 auto}
-.faq-hd{text-align:center;margin-bottom:32px}
+.faq-hd{text-align:center;margin-bottom:20px}
 .faq-hd .sl{justify-content:center}.faq-hd .ss{margin:0 auto;text-align:center}
 .fi{border-bottom:1px solid var(--border)}
-.fq{width:100%;background:none;border:none;display:flex;justify-content:space-between;align-items:center;padding:16px 0;text-align:left;gap:16px;font-family:'DM Sans',sans-serif;font-size:.92rem;color:var(--ink);font-weight:400;transition:color .2s}
+.fq{width:100%;background:none;border:none;display:flex;justify-content:space-between;align-items:center;padding:12px 0;text-align:left;gap:12px;font-family:'DM Sans',sans-serif;font-size:.84rem;color:var(--ink);font-weight:400;transition:color .2s}
 .fq:hover{color:var(--teal)}
-.fq-ico{flex-shrink:0;width:24px;height:24px;border-radius:50%;border:1.5px solid var(--border-md);display:flex;align-items:center;justify-content:center;color:var(--teal);transition:transform .35s,background .25s,border-color .25s}
+.fq-ico{flex-shrink:0;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--border-md);display:flex;align-items:center;justify-content:center;color:var(--teal);transition:transform .35s,background .25s,border-color .25s}
 .fq.open .fq-ico{transform:rotate(45deg);background:var(--teal);border-color:var(--teal);color:#fff}
-.fa{max-height:0;overflow:hidden;transition:max-height .4s,padding .3s;font-size:.86rem;color:var(--muted);line-height:1.8;font-weight:300}
-.fa.open{max-height:300px;padding-bottom:20px}
+.fa{max-height:0;overflow:hidden;transition:max-height .4s,padding .3s;font-size:.8rem;color:var(--muted);line-height:1.7;font-weight:300}
+.fa.open{max-height:300px;padding-bottom:12px}
 
 /* ═══ CONTACT ═══ */
-#contact{background:var(--bg-deep);padding:64px 48px}
-.ct-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1.4fr;gap:72px;align-items:start}
-.ct-left .st{color:#fff}.ct-left .sl{color:var(--teal-lt)}.ct-left .sl::before{background:var(--teal-lt)}.ct-left .ss{color:rgba(255,255,255,.4);margin-bottom:40px}
-.c-items{display:flex;flex-direction:column;gap:10px}
-.ci{display:flex;gap:14px;align-items:flex-start;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:var(--radius-sm);padding:16px 18px;transition:border-color .25s}
+#contact{background:var(--bg-deep);padding:36px 48px}
+.ct-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1.4fr;gap:36px;align-items:start}
+.ct-left .st{color:#fff}.ct-left .sl{color:var(--teal-lt)}.ct-left .sl::before{background:var(--teal-lt)}.ct-left .ss{color:rgba(255,255,255,.4);margin-bottom:16px}
+.c-items{display:flex;flex-direction:column;gap:8px}
+.ci{display:flex;gap:10px;align-items:flex-start;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:var(--radius-sm);padding:10px 12px;transition:border-color .25s}
 .ci:hover{border-color:rgba(42,124,111,.4)}
-.ci-ico{width:36px;height:36px;flex-shrink:0;border-radius:9px;background:rgba(42,124,111,.15);display:flex;align-items:center;justify-content:center;color:var(--teal-lt)}
+.ci-ico{width:32px;height:32px;flex-shrink:0;border-radius:9px;background:rgba(42,124,111,.15);display:flex;align-items:center;justify-content:center;color:var(--teal-lt)}
 .ci h5{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:3px;font-weight:500}
 .ci p{font-size:.86rem;color:rgba(255,255,255,.7)}
 /* form */
-.fpanel{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:28px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
-.fpanel h3{font-family:'Fraunces',serif;font-size:1.4rem;font-weight:300;color:#fff;margin-bottom:24px}
+.fpanel{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:20px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.fpanel h3{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:300;color:#fff;margin-bottom:16px}
 .frow{display:grid;grid-template-columns:1fr 1fr;gap:11px}
-.fg{margin-bottom:9px}
+.fg{margin-bottom:6px}
 .fg label{display:block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:6px;font-weight:500}
 .fg input,.fg select,.fg textarea{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:9px;padding:11px 14px;color:#fff;font-family:'DM Sans',sans-serif;font-size:.86rem;outline:none;transition:border-color .25s,background .25s;-webkit-appearance:none}
 .fg select option{background:#0b1a15;color:#fff}
 .fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--teal);background:rgba(42,124,111,.07)}
 .fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,.14)}
-.fg textarea{min-height:90px;resize:vertical}
-.fg-cond{max-height:0;overflow:hidden;opacity:0;transition:max-height .4s,opacity .3s,margin .3s;margin-bottom:0}
-.fg-cond.vis{max-height:120px;opacity:1;margin-bottom:11px}
-.fg-cond label{display:block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:6px;font-weight:500}
-.fg-cond select{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:9px;padding:11px 14px;color:#fff;font-family:'DM Sans',sans-serif;font-size:.86rem;outline:none;transition:border-color .25s;-webkit-appearance:none}
-.fg-cond select option{background:#0b1a15;color:#fff}
-.fg-cond select:focus{border-color:var(--teal)}
+.fg textarea{min-height:56px;resize:vertical}
+/* Checkbox */
+.fg-check{margin:10px 0 4px}
+.check-label{display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:.78rem;color:rgba(255,255,255,.35);line-height:1.5}
+.check-label input{display:none}
+.check-box{flex-shrink:0;width:18px;height:18px;border:1.5px solid rgba(255,255,255,.15);border-radius:4px;display:flex;align-items:center;justify-content:center;transition:all .2s;margin-top:1px}
+.check-label input:checked~.check-box{background:var(--teal);border-color:var(--teal)}
+.check-label input:checked~.check-box::after{content:'✓';color:#fff;font-size:.7rem}
+.check-text a{color:var(--teal-lt);text-decoration:underline;text-decoration-color:rgba(56,160,143,.3);text-underline-offset:2px;transition:text-decoration-color .2s}
+.check-text a:hover{text-decoration-color:var(--teal-lt)}
 .btn-send{width:100%;background:var(--teal);color:#fff;border:none;padding:13px;border-radius:10px;font-size:.86rem;font-weight:500;letter-spacing:.04em;margin-top:4px;transition:all .25s}
 .btn-send:hover{background:var(--teal-lt);transform:translateY(-1px);box-shadow:0 10px 32px var(--teal-glow)}
 .f-fine{text-align:center;font-size:.68rem;color:rgba(255,255,255,.16);margin-top:10px}
@@ -205,15 +212,15 @@ section{padding:64px 48px}
 .f-ok p{font-size:.84rem;color:rgba(255,255,255,.3)}
 
 /* ═══ LEGAL ═══ */
-#legal{background:var(--bg-warm);padding:44px 48px}
-.legal-in{max-width:820px;margin:0 auto}
-.legal-hd{text-align:center;margin-bottom:32px}
-.leg-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:32px;box-shadow:var(--shadow-sm)}
-.leg-card-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:36px}
-.leg-block h4{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);font-weight:600;margin-bottom:14px;padding-bottom:8px;border-bottom:1.5px solid var(--teal-pale)}
-.leg-full{font-size:.82rem;color:var(--mid);line-height:1.6;margin-bottom:16px;font-style:italic}
-.leg-rows{display:flex;flex-direction:column;gap:6px}
-.leg-row{display:flex;gap:8px;font-size:.82rem;line-height:1.5}
+#legal{background:var(--bg-warm);padding:32px 48px}
+.legal-in{max-width:1000px;margin:0 auto}
+.legal-hd{text-align:center;margin-bottom:20px}
+.leg-layout{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+.leg-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow-sm);position:sticky;top:100px}
+.leg-block h4{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);font-weight:600;margin-bottom:10px;padding-bottom:6px;border-bottom:1.5px solid var(--teal-pale)}
+.leg-full{font-size:.78rem;color:var(--mid);line-height:1.5;margin-bottom:10px;font-style:italic}
+.leg-rows{display:flex;flex-direction:column;gap:4px}
+.leg-row{display:flex;gap:8px;font-size:.78rem;line-height:1.5}
 .leg-k{color:var(--muted);flex-shrink:0;min-width:110px;font-weight:500}
 .leg-v{color:var(--ink)}
 .leg-v a{color:var(--teal);text-decoration:underline;text-decoration-color:rgba(42,124,111,.3);text-underline-offset:2px;transition:text-decoration-color .2s}
@@ -236,33 +243,68 @@ footer{background:var(--bg-deep);padding:44px 48px}
 .socials a:hover{border-color:var(--teal);color:var(--teal-lt)}
 .socials a svg{width:13px;height:13px}
 
+/* ═══ POPUP ═══ */
+.popup-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);z-index:9999;display:none;align-items:center;justify-content:center;padding:20px}
+.popup-overlay.show{display:flex}
+.popup{background:var(--white);border-radius:20px;padding:44px 36px;max-width:440px;width:100%;text-align:center;position:relative;animation:popIn .4s ease;box-shadow:var(--shadow-lg)}
+@keyframes popIn{from{opacity:0;transform:scale(.9) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.popup-x{position:absolute;top:14px;right:14px;background:none;border:none;color:var(--muted);font-size:1.1rem;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:background .2s}
+.popup-x:hover{background:var(--bg-warm)}
+.popup-icon{margin:0 auto 20px;width:72px;height:72px;border-radius:50%;background:var(--teal-pale);display:flex;align-items:center;justify-content:center;color:var(--teal)}
+.popup-icon svg{width:36px;height:36px}
+.popup h3{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:400;color:var(--ink);margin-bottom:10px}
+.popup p{font-size:.88rem;color:var(--muted);line-height:1.7;margin-bottom:24px}
+.popup-btn{background:var(--teal);color:#fff;border:none;padding:12px 36px;border-radius:100px;font-size:.86rem;font-weight:500;transition:all .25s}
+.popup-btn:hover{background:var(--teal-lt);transform:translateY(-1px);box-shadow:0 8px 24px var(--teal-glow)}
+
+/* ═══ PHONE FIELD ═══ */
+.ph-field{position:relative}
+.ph-code{position:absolute;left:1px;top:1px;bottom:1px;display:flex;align-items:center;gap:5px;padding:0 10px;background:rgba(255,255,255,.04);border-right:1px solid rgba(255,255,255,.08);border-radius:8px 0 0 8px;cursor:pointer;transition:background .2s;z-index:2}
+.ph-code:hover{background:rgba(255,255,255,.08)}
+.ph-flag{width:20px;height:15px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ph-num-code{font-size:.8rem;color:rgba(255,255,255,.6);font-weight:500;min-width:36px}
+.ph-arrow{color:rgba(255,255,255,.3);transition:transform .2s;flex-shrink:0}
+.ph-field.open .ph-arrow{transform:rotate(180deg)}
+.ph-input{padding-left:110px !important}
+.ph-dropdown{position:absolute;top:calc(100% + 4px);left:0;right:0;background:var(--bg-deep);border:1px solid rgba(255,255,255,.12);border-radius:10px;box-shadow:0 16px 48px rgba(0,0,0,.5);overflow:hidden;opacity:0;pointer-events:none;transform:translateY(-6px);transition:opacity .2s,transform .2s;z-index:100;max-height:280px;display:flex;flex-direction:column}
+.ph-field.open .ph-dropdown{opacity:1;pointer-events:auto;transform:translateY(0)}
+.ph-search{width:100%;background:rgba(255,255,255,.04);border:none;border-bottom:1px solid rgba(255,255,255,.08);padding:10px 12px;color:#fff;font-family:'DM Sans',sans-serif;font-size:.82rem;outline:none}
+.ph-search::placeholder{color:rgba(255,255,255,.2)}
+.ph-list{overflow-y:auto;flex:1;max-height:240px}
+.ph-list::-webkit-scrollbar{width:4px}.ph-list::-webkit-scrollbar-track{background:transparent}.ph-list::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:4px}
+.ph-item{display:flex;align-items:center;gap:10px;padding:9px 12px;cursor:pointer;transition:background .15s;font-size:.82rem;color:rgba(255,255,255,.6)}
+.ph-item:hover{background:rgba(42,124,111,.15);color:#fff}
+.ph-item.active{background:rgba(42,124,111,.2);color:var(--teal-lt)}
+.ph-item-flag{width:24px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ph-item-name{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ph-item-code{color:rgba(255,255,255,.3);font-size:.78rem;font-weight:500}
+
 /* ═══ RESPONSIVE ═══ */
 @media(max-width:1080px){
   nav{padding:0 32px}section{padding:48px 32px}.hero-ct{padding:calc(var(--nav-h) + 40px) 32px 44px}
   .steps{grid-template-columns:repeat(2,1fr)}.feats{grid-template-columns:1fr 1fr}
   .svc-grid{grid-template-columns:1fr;gap:14px}
   .ct-grid{grid-template-columns:1fr;gap:40px}.ft-grid{grid-template-columns:1fr 1fr;gap:32px}
-  .map-hd{padding:44px 32px 28px}#reviews{padding:44px 32px}#legal{padding:36px 32px}
-  .leg-card-grid{grid-template-columns:1fr}
-  .leg-card{padding:24px 20px}footer{padding:36px 32px}
+  .map-hd{padding:44px 32px 28px}#reviews{padding:44px 32px}#legal{padding:24px 32px}
+  .leg-layout{grid-template-columns:1fr}.leg-card{position:static;padding:24px 20px}footer{padding:36px 32px}
 }
 @media(max-width:768px){
   nav{padding:0 20px}.nav-links,.btn-nav{display:none}.hamburger{display:flex}
   section{padding:36px 20px}.hero-ct{padding:calc(var(--nav-h) + 28px) 20px 36px}
   .hero-h{font-size:2.2rem}.hero-stats{gap:20px;flex-wrap:wrap}.hs-n{font-size:1.8rem}
   .svc-grid{grid-template-columns:1fr;gap:10px}.svc-card{padding:24px 20px}
-  .pgrid{grid-template-columns:1fr;gap:10px}.pc img{min-height:170px}
+  .pgrid{grid-template-columns:1fr;gap:10px}.pc img{height:180px}
   .steps{grid-template-columns:1fr;gap:1px}.step::after{display:none}.step{padding:18px 16px}.step-n{font-size:2.6rem}
   .feats{grid-template-columns:1fr;gap:10px}.feat{padding:14px;gap:8px}
   .frow{grid-template-columns:1fr}
   .ft-grid{grid-template-columns:1fr;gap:28px}.ft-bot{flex-direction:column;gap:14px;text-align:center}
   .map-hd{padding:36px 20px 24px}.map-w{height:260px}
   #reviews{padding:36px 20px}.rev-text{font-size:1.15rem;min-height:100px}
-  #contact{padding:40px 20px}.fpanel{padding:24px 18px;border-radius:14px}
-  #legal{padding:28px 20px}
-  .leg-card{padding:20px 16px}
-  .leg-k{min-width:90px;font-size:.76rem}
-  .leg-v{font-size:.76rem}footer{padding:28px 20px}
+  #contact{padding:24px 16px}.fpanel{padding:24px 18px;border-radius:14px}
+  #legal{padding:20px 20px}
+  .leg-card{padding:18px 14px}
+  .leg-k{min-width:80px;font-size:.74rem}
+  .leg-v{font-size:.74rem}footer{padding:28px 20px}
 }
 @media(max-width:420px){
   .hero-ct{padding:calc(var(--nav-h) + 20px) 16px 28px}.hero-h{font-size:1.9rem}
@@ -270,11 +312,11 @@ footer{background:var(--bg-deep);padding:44px 48px}
   .hero-stats{flex-direction:column;gap:12px}
   section{padding:28px 14px}.st{font-size:1.6rem}
   .svc-card{padding:20px 16px}.svc-card h3{font-size:1.15rem}.svc-ico{width:44px;height:44px}
-  .pc img{min-height:150px}
+  .pc img{height:150px}
   .feat{padding:14px;gap:8px}.feat h4{font-size:.82rem}
   .fpanel h3{font-size:1.2rem}
   .rev-text{font-size:1.05rem;min-height:80px}
-  #reviews{padding:28px 14px}#legal{padding:22px 14px}footer{padding:22px 14px}
+  #reviews{padding:28px 14px}#legal{padding:16px 14px}footer{padding:22px 14px}
 }
 @supports(padding:env(safe-area-inset-top)){
   nav{padding-left:max(env(safe-area-inset-left),20px);padding-right:max(env(safe-area-inset-right),20px)}
@@ -294,6 +336,7 @@ footer{background:var(--bg-deep);padding:44px 48px}
   <a href="#how" onclick="closeMob()" data-t="nav.how">Як це працює</a>
   <a href="#faq" onclick="closeMob()">FAQ</a>
   <a href="#contact" onclick="closeMob()" data-t="nav.ct">Контакти</a>
+  <a href="#legal" onclick="closeMob()" data-t="nav.leg">Юридична інформація</a>
 </div>
 
 <!-- NAV -->
@@ -305,6 +348,7 @@ footer{background:var(--bg-deep);padding:44px 48px}
     <li><a href="#how" data-t="nav.how">Як це працює</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact" data-t="nav.ct">Контакти</a></li>
+    <li><a href="#legal" data-t="nav.leg">Юридична інформація</a></li>
   </ul>
   <div class="nav-r">
     <div class="lang-dd" id="langDd">
@@ -345,7 +389,7 @@ footer{background:var(--bg-deep);padding:44px 48px}
 <section id="projects">
   <div class="mx">
     <div class="proj-hd rv">
-      <div><div class="sl" data-t="proj.label">Портфоліо</div><h2 class="st" data-t="proj.title">Реалізовані <em>проєкти</em></h2></div>
+      <div><div class="sl" data-t="proj.label">Портфоліо</div><h2 class="st" data-t="proj.title">Наші <em>проєкти</em></h2></div>
       
     </div>
     <div class="pgrid rv">
@@ -353,7 +397,7 @@ footer{background:var(--bg-deep);padding:44px 48px}
       <div class="pc"><img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=700&q=82&auto=format&fit=crop" alt="Trogir" loading="lazy"><div class="pc-ov"><div class="pc-badge badge-done" data-t="proj.done">● Завершено</div><div class="pc-name" data-t="proj.p2">Rezidencija Trogir</div><div class="pc-loc">Трогір, Хорватія</div></div></div>
       <div class="pc"><img src="https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=600&q=82&auto=format&fit=crop" alt="Brela" loading="lazy"><div class="pc-ov"><div class="pc-badge badge-done" data-t="proj.done">● Завершено</div><div class="pc-name" data-t="proj.p3">Апартаменти Брела</div><div class="pc-loc">Брела, Макарська рів'єра</div></div></div>
       <div class="pc"><img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=600&q=82&auto=format&fit=crop" alt="Hvar" loading="lazy"><div class="pc-ov"><div class="pc-badge badge-done" data-t="proj.done">● Завершено</div><div class="pc-name" data-t="proj.p4">Вілла на о. Хвар</div><div class="pc-loc">Хвар, Далмація</div></div></div>
-      <div class="pc" style="grid-column:1/-1"><img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1200&q=82&auto=format&fit=crop" alt="Sibenik" loading="lazy" style="min-height:300px"><div class="pc-ov"><div class="pc-badge badge-wip" data-t="proj.wip">● В процесі</div><div class="pc-name" data-t="proj.p5">Бутік-готель Шибеник</div><div class="pc-loc">Шибеник, Хорватія</div></div></div>
+      <div class="pc"><img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1200&q=82&auto=format&fit=crop" alt="Sibenik" loading="lazy" ><div class="pc-ov"><div class="pc-badge badge-wip" data-t="proj.wip">● В процесі</div><div class="pc-name" data-t="proj.p5">Бутік-готель Шибеник</div><div class="pc-loc">Шибеник, Хорватія</div></div></div>
     </div>
   </div>
 </section>
@@ -426,14 +470,22 @@ footer{background:var(--bg-deep);padding:44px 48px}
     <div class="sl" data-t="rev.label">Відгуки партнерів</div>
     <p class="rev-text" id="revTxt"></p>
     <p class="rev-author" id="revAuth"></p>
-    <div class="rev-dots" id="revDots"></div>
+    <div class="rev-nav">
+      <button class="rev-arr" onclick="showRev((curRev-1+REVIEWS[lang].length)%REVIEWS[lang].length)" aria-label="Previous">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="rev-dots" id="revDots"></div>
+      <button class="rev-arr" onclick="showRev((curRev+1)%REVIEWS[lang].length)" aria-label="Next">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
   </div>
 </section>
 
 <!-- ═══ FAQ ═══ -->
 <section id="faq">
   <div class="mx faq-in">
-    <div class="faq-hd"><div class="sl" data-t="faq.label">Часті запитання</div><h2 class="st rv" data-t="faq.title">FAQ</h2><p class="ss rv" data-t="faq.sub">Все, що вам потрібно знати про будівництво в Хорватії</p></div>
+    <div class="faq-hd"><div class="sl" data-t="faq.label">FAQ</div><p class="ss rv" data-t="faq.sub">Все, що вам потрібно знати про будівництво в Хорватії</p></div>
     <div id="faqList" class="rv"></div>
   </div>
 </section>
@@ -447,22 +499,35 @@ footer{background:var(--bg-deep);padding:44px 48px}
       <p class="ss" data-t="ct.sub">Залиште заявку і наш менеджер зв'яжеться з вами впродовж 24 годин.</p>
       <div class="c-items">
         <div class="ci"><div class="ci-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4a2 2 0 0 1 2-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><h5 data-t="ct.ph">Телефон</h5><p>+385 XX XXX XXXX</p></div></div>
-        <div class="ci"><div class="ci-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><h5>Email</h5><p>info@sigurhaus.hr</p></div></div>
+        <div class="ci"><div class="ci-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><h5>Email</h5><p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="543d3a323b14273d3321263c3521277a3c26">[email&#160;protected]</a></p></div></div>
         <div class="ci"><div class="ci-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><h5 data-t="ct.al">Адреса</h5><p data-t="ct.addr">Хорватія, Спліт</p></div></div>
       </div>
     </div>
     <div class="fpanel rv d1">
       <div id="formC">
         <h3 data-t="fm.title">Замовити консультацію</h3>
-        <div class="frow"><div class="fg"><label data-t="fm.name">Ваше ім'я</label><input type="text" id="fn" placeholder="Іван Шевченко" autocomplete="name"></div><div class="fg"><label data-t="fm.phone">Телефон</label><input type="tel" id="fph" placeholder="+380 XX XXX XXXX" autocomplete="tel"></div></div>
+        <div class="frow"><div class="fg"><label data-t="fm.name">Ваше ім'я</label><input type="text" id="fn" placeholder="Іван Шевченко" autocomplete="name"></div><div class="fg"><label data-t="fm.phone">Телефон</label>
+              <div class="ph-field">
+                <div class="ph-code" id="phCode" onclick="togglePhDd()">
+                  <span class="ph-flag" id="phFlag"><img src="https://flagcdn.com/w40/hr.png" width="20" height="15" alt="" style="border-radius:2px;object-fit:cover;display:block"></span>
+                  <span class="ph-num-code" id="phNumCode">+385</span>
+                  <svg class="ph-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg>
+                </div>
+                <input type="tel" id="fph" placeholder="XX XXX XXXX" autocomplete="tel" class="ph-input">
+                <div class="ph-dropdown" id="phDd">
+                  <input type="text" class="ph-search" id="phSearch" placeholder="Search..." oninput="filterCountries()">
+                  <div class="ph-list" id="phList"></div>
+                </div>
+              </div>
+            </div></div>
         <div class="fg"><label>Email</label><input type="email" id="fem" placeholder="ivan@email.com" autocomplete="email"></div>
+        <div class="fg"><label data-t="fm.svc">Яка послуга цікавить?</label><select id="fSvc"><option value="" data-t="fm.svc0">Оберіть послугу</option><option value="turnkey" data-t="fm.svc1">Будівництво під ключ</option><option value="mono" data-t="fm.svc2">Монолітні роботи</option><option value="general" data-t="fm.svc3">Загальна консультація</option></select></div>
         <div class="fg"><label data-t="fm.fmt">Формат зв'язку</label><select id="fFmt"><option value="" data-t="fm.fmt0">Оберіть формат</option><option value="call" data-t="fm.fmt1">Зворотний дзвінок</option><option value="online" data-t="fm.fmt2">Онлайн-зустріч (Zoom)</option><option value="office" data-t="fm.fmt3">Зустріч в офісі (Спліт)</option></select></div>
-        <div class="fg"><label data-t="fm.svc">Яка послуга цікавить?</label><select id="fSvc" onchange="onSvc()"><option value="" data-t="fm.svc0">Оберіть послугу</option><option value="turnkey" data-t="fm.svc1">Будівництво під ключ</option><option value="mono" data-t="fm.svc2">Монолітні роботи</option><option value="general" data-t="fm.svc3">Загальна консультація</option></select></div>
-        <div class="fg-cond" id="fgProp"><label data-t="fm.prop">Який проєкт цікавить?</label><select id="fProp"><option value="" data-t="fm.prop0">Оберіть з портфоліо або свій</option><option value="p1">Вілла Адріатік — Спліт</option><option value="p2">Rezidencija Trogir — Трогір</option><option value="p3">Апартаменти Брела</option><option value="p4">Вілла на о. Хвар</option><option value="p5">Бутік-готель Шибеник</option><option value="own" data-t="fm.propOwn">Власний проєкт</option></select></div>
         <div class="fg"><label data-t="fm.time">Зручний час</label><select id="fTime"><option value="" data-t="fm.time0">Оберіть час</option><option>10:00–11:00</option><option>11:00–12:00</option><option>12:00–13:00</option><option>13:00–14:00</option><option>14:00–15:00</option><option>15:00–16:00</option><option>16:00–17:00</option><option>17:00–18:00</option></select></div>
-        <div class="fg"><label data-t="fm.msg">Деталі проєкту</label><textarea id="fmsg" placeholder="Розкажіть про ваш проєкт..."></textarea></div>
+        <div class="fg-check">
+          <label class="check-label"><input type="checkbox" id="fGdpr"><span class="check-box"></span><span class="check-text" data-t="fm.gdpr">Я погоджуюся з обробкою персональних даних відповідно до <a href="#legal">Політики конфіденційності</a></span></label>
+        </div>
         <button class="btn-send" onclick="submit()" data-t="fm.send">Замовити консультацію</button>
-        <p class="f-fine" data-t="fm.fine">Ми не передаємо ваші дані третім особам</p>
       </div>
       <div class="f-ok" id="formOk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><h3 data-t="fm.okt">Дякуємо!</h3><p data-t="fm.okd">Ваша заявка прийнята. Ми зв'яжемося впродовж 24 годин.</p></div>
     </div>
@@ -474,11 +539,11 @@ footer{background:var(--bg-deep);padding:44px 48px}
 <!-- ═══ LEGAL ═══ -->
 <section id="legal">
   <div class="mx legal-in">
-    <div class="legal-hd"><div class="sl" data-t="leg.label">Юридична інформація</div><h2 class="st rv" data-t="leg.title">Правові <em>умови</em></h2></div>
+    <div class="legal-hd"><div class="sl" data-t="leg.label">Юридична інформація</div></div>
     
-    <!-- Company details card -->
-    <div class="leg-card rv">
-      <div class="leg-card-grid">
+    <div class="leg-layout rv">
+      <!-- Left: Company card -->
+      <div class="leg-card">
         <div class="leg-block">
           <h4 data-t="leg.comp">Podaci o društvu</h4>
           <p class="leg-full" data-t="leg.compFull">SIGURHAUS društvo s ograničenom odgovornošću za graditeljstvo i usluge</p>
@@ -491,14 +556,12 @@ footer{background:var(--bg-deep);padding:44px 48px}
             <div class="leg-row"><span class="leg-k" data-t="leg.capital">Temeljni kapital:</span><span class="leg-v">2.500,00 EUR (uplaćen u cijelosti)</span></div>
             <div class="leg-row"><span class="leg-k" data-t="leg.director">Član uprave:</span><span class="leg-v">Erik Isaev</span></div>
           </div>
-        </div>
-        <div class="leg-block">
-          <h4 data-t="leg.contact">Kontakt</h4>
+          <h4 style="margin-top:12px" data-t="leg.contact">Kontakt</h4>
           <div class="leg-rows">
-            <div class="leg-row"><span class="leg-k">E-mail:</span><span class="leg-v"><a href="mailto:info@sigurhaus.hr">info@sigurhaus.hr</a></span></div>
+            <div class="leg-row"><span class="leg-k">E-mail:</span><span class="leg-v"><a href="/cdn-cgi/l/email-protection#b3daddd5dcf3c0dad4c6c1dbd2c6c09ddbc1"><span class="__cf_email__" data-cfemail="99f0f7fff6d9eaf0feecebf1f8eceab7f1eb">[email&#160;protected]</span></a></span></div>
             <div class="leg-row"><span class="leg-k" data-t="leg.phone">Telefon:</span><span class="leg-v">+385 XX XXX XXXX</span></div>
           </div>
-          <h4 style="margin-top:20px" data-t="leg.bank">Banka i račun</h4>
+          <h4 style="margin-top:12px" data-t="leg.bank">Banka i račun</h4>
           <div class="leg-rows">
             <div class="leg-row"><span class="leg-k">IBAN:</span><span class="leg-v">HR12 2340 0091 1234 5678 9</span></div>
             <div class="leg-row"><span class="leg-k" data-t="leg.bankName">Naziv banke:</span><span class="leg-v">Privredna banka Zagreb d.d.</span></div>
@@ -506,10 +569,9 @@ footer{background:var(--bg-deep);padding:44px 48px}
           </div>
         </div>
       </div>
+      <!-- Right: Accordion -->
+      <div id="legalList"></div>
     </div>
-
-    <!-- Accordion sections -->
-    <div id="legalList" class="rv" style="margin-top:20px"></div>
   </div>
 </section>
 
@@ -520,7 +582,7 @@ footer{background:var(--bg-deep);padding:44px 48px}
     <div class="ft-col"><h6 data-t="ft.c1">Компанія</h6><ul><li><a href="#services" data-t="nav.svc">Послуги</a></li>
     <li><a href="#projects" data-t="nav.proj">Портфоліо</a></li><li><a href="#how" data-t="nav.how">Як це працює</a></li><li><a href="#faq">FAQ</a></li></ul></div>
     <div class="ft-col"><h6 data-t="ft.c2">Послуги</h6><ul><li><a href="#contact" data-t="ft.s1">Будівництво під ключ</a></li><li><a href="#contact" data-t="ft.s2">Монолітні роботи</a></li><li><a href="#contact" data-t="ft.s3">Консультації</a></li></ul></div>
-    <div class="ft-col"><h6 data-t="ft.c3">Контакти</h6><ul><li><a href="mailto:info@sigurhaus.hr">info@sigurhaus.hr</a></li><li><a href="tel:+38500000000">+385 XX XXX XXXX</a></li><li><a href="#contact" data-t="ct.addr">Хорватія, Спліт</a></li></ul></div>
+    <div class="ft-col"><h6 data-t="ft.c3">Контакти</h6><ul><li><a href="/cdn-cgi/l/email-protection#3e575058517e4d57594b4c565f4b4d10564c"><span class="__cf_email__" data-cfemail="cca5a2aaa38cbfa5abb9bea4adb9bfe2a4be">[email&#160;protected]</span></a></li><li><a href="tel:+38500000000">+385 XX XXX XXXX</a></li><li><a href="#contact" data-t="ct.addr">Хорватія, Спліт</a></li></ul></div>
   </div>
   <div class="ft-bot">
     <p>© 2024 SigurHaus. All rights reserved.</p>
@@ -532,16 +594,16 @@ footer{background:var(--bg-deep);padding:44px 48px}
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 /* ═══ i18n ═══ */
 const L={
 uk:{
-"nav.svc":"Послуги","nav.proj":"Портфоліо","nav.ct":"Контакти","nav.how":"Як це працює","nav.cta":"Консультація",
+"nav.svc":"Послуги","nav.proj":"Портфоліо","nav.ct":"Контакти","nav.leg":"Юридична інформація","nav.how":"Як це працює","nav.cta":"Консультація",
 "hero.chip":"Будівництво у Хорватії","hero.t1":"Будуємо","hero.t2":"на Адріатиці",
 "hero.sub":"SigurHaus — будівельна компанія на узбережжі Хорватії. Два напрямки для інвесторів: будівництво об'єктів під ключ та професійні монолітні роботи. Від фундаменту до здачі — під нашим контролем.",
 "hero.cta1":"Замовити консультацію","hero.cta2":"Наші проєкти",
 "hero.s1":"Залучених інвестицій","hero.s2":"Об'єктів монолітних робіт","hero.s3":"Проєктів здано в строк",
-"proj.label":"Портфоліо","proj.title":"Реалізовані проєкти",
+"proj.label":"Портфоліо","proj.title":"Наші проєкти",
 "proj.done":"● Завершено","proj.wip":"● В процесі",
 "proj.p1":"Вілла Адріатік","proj.p2":"Rezidencija Trogir","proj.p3":"Апартаменти Брела","proj.p4":"Вілла на о. Хвар","proj.p5":"Бутік-готель Шибеник",
 "how.label":"Як це працює","how.t1":"Простий процес —","how.t2":"від ідеї до об'єкта",
@@ -568,9 +630,8 @@ uk:{
 "fm.title":"Замовити консультацію","fm.name":"Ваше ім'я","fm.phone":"Телефон",
 "fm.fmt":"Формат зв'язку","fm.fmt0":"Оберіть формат","fm.fmt1":"Зворотний дзвінок","fm.fmt2":"Онлайн-зустріч (Zoom)","fm.fmt3":"Зустріч в офісі (Спліт)",
 "fm.svc":"Яка послуга цікавить?","fm.svc0":"Оберіть послугу","fm.svc1":"Будівництво під ключ","fm.svc2":"Монолітні роботи","fm.svc3":"Загальна консультація",
-"fm.prop":"Який проєкт цікавить?","fm.prop0":"Оберіть з портфоліо або свій","fm.propOwn":"Власний проєкт",
 "fm.time":"Зручний час","fm.time0":"Оберіть час",
-"fm.msg":"Деталі проєкту","fm.send":"Замовити консультацію","fm.fine":"Ми не передаємо ваші дані третім особам",
+"fm.gdpr":"Я погоджуюся з обробкою персональних даних відповідно до Політики конфіденційності","fm.send":"Замовити консультацію",
 "fm.okt":"Дякуємо!","fm.okd":"Ваша заявка прийнята. Ми зв'яжемося впродовж 24 годин.",
 
 "leg.label":"Юридична інформація","leg.title":"Правові умови",
@@ -579,12 +640,12 @@ uk:{
 "ft.s1":"Будівництво під ключ","ft.s2":"Монолітні роботи","ft.s3":"Консультації"
 },
 en:{
-"nav.svc":"Services","nav.proj":"Portfolio","nav.ct":"Contact","nav.how":"How It Works","nav.cta":"Consultation",
+"nav.svc":"Services","nav.proj":"Portfolio","nav.ct":"Contact","nav.leg":"Legal Info","nav.how":"How It Works","nav.cta":"Consultation",
 "hero.chip":"Construction in Croatia","hero.t1":"We Build","hero.t2":"on the Adriatic",
 "hero.sub":"SigurHaus is a construction company on the Croatian coast. Two directions for investors: turnkey construction and professional monolithic works. From foundation to handover — under our control.",
 "hero.cta1":"Book Consultation","hero.cta2":"Our Projects",
 "hero.s1":"Investments attracted","hero.s2":"Monolithic work objects","hero.s3":"Projects delivered on time",
-"proj.label":"Portfolio","proj.title":"Completed Projects",
+"proj.label":"Portfolio","proj.title":"Our Projects",
 "proj.done":"● Completed","proj.wip":"● In Progress",
 "proj.p1":"Villa Adriatic","proj.p2":"Rezidencija Trogir","proj.p3":"Apartments Brela","proj.p4":"Villa on Hvar","proj.p5":"Boutique Hotel Šibenik",
 "how.label":"How It Works","how.t1":"Simple process —","how.t2":"from idea to completion",
@@ -611,9 +672,8 @@ en:{
 "fm.title":"Book Consultation","fm.name":"Your Name","fm.phone":"Phone",
 "fm.fmt":"Contact format","fm.fmt0":"Select format","fm.fmt1":"Callback","fm.fmt2":"Online meeting (Zoom)","fm.fmt3":"Office meeting (Split)",
 "fm.svc":"Service of interest","fm.svc0":"Select service","fm.svc1":"Turnkey construction","fm.svc2":"Monolithic works","fm.svc3":"General consultation",
-"fm.prop":"Project of interest","fm.prop0":"Select from portfolio or your own","fm.propOwn":"My own project",
 "fm.time":"Preferred time","fm.time0":"Select time",
-"fm.msg":"Project details","fm.send":"Book Consultation","fm.fine":"We don't share your data with third parties",
+"fm.gdpr":"I agree to the processing of personal data in accordance with the Privacy Policy","fm.send":"Book Consultation",
 "fm.okt":"Thank You!","fm.okd":"Request received. We'll contact you within 24 hours.",
 
 "leg.label":"Legal Information","leg.title":"Legal Terms",
@@ -622,12 +682,12 @@ en:{
 "ft.s1":"Turnkey construction","ft.s2":"Monolithic works","ft.s3":"Consultations"
 },
 hr:{
-"nav.svc":"Usluge","nav.proj":"Portfelj","nav.ct":"Kontakt","nav.how":"Kako radimo","nav.cta":"Konzultacije",
+"nav.svc":"Usluge","nav.proj":"Portfelj","nav.ct":"Kontakt","nav.leg":"Pravne informacije","nav.how":"Kako radimo","nav.cta":"Konzultacije",
 "hero.chip":"Građevinarstvo u Hrvatskoj","hero.t1":"Gradimo","hero.t2":"na Jadranu",
 "hero.sub":"SigurHaus je građevinska tvrtka na hrvatskoj obali. Dva smjera za investitore: gradnja pod ključ i profesionalni monolitni radovi. Od temelja do predaje — pod našom kontrolom.",
 "hero.cta1":"Zakažite konzultaciju","hero.cta2":"Naši projekti",
 "hero.s1":"Privučenih investicija","hero.s2":"Monolitnih objekata","hero.s3":"Projekata predano na vrijeme",
-"proj.label":"Portfelj","proj.title":"Realizirani projekti",
+"proj.label":"Portfelj","proj.title":"Naši projekti",
 "proj.done":"● Završeno","proj.wip":"● U tijeku",
 "proj.p1":"Vila Jadran","proj.p2":"Rezidencija Trogir","proj.p3":"Apartmani Brela","proj.p4":"Vila na Hvaru","proj.p5":"Boutique hotel Šibenik",
 "how.label":"Kako radimo","how.t1":"Jednostavan proces —","how.t2":"od ideje do objekta",
@@ -654,9 +714,8 @@ hr:{
 "fm.title":"Zakažite konzultaciju","fm.name":"Vaše ime","fm.phone":"Telefon",
 "fm.fmt":"Format kontakta","fm.fmt0":"Odaberite format","fm.fmt1":"Povratni poziv","fm.fmt2":"Online sastanak (Zoom)","fm.fmt3":"Sastanak u uredu (Split)",
 "fm.svc":"Koja usluga?","fm.svc0":"Odaberite uslugu","fm.svc1":"Gradnja pod ključ","fm.svc2":"Monolitni radovi","fm.svc3":"Opće konzultacije",
-"fm.prop":"Koji projekt?","fm.prop0":"Odaberite iz portfelja","fm.propOwn":"Vlastiti projekt",
 "fm.time":"Željeno vrijeme","fm.time0":"Odaberite vrijeme",
-"fm.msg":"Detalji projekta","fm.send":"Zakažite konzultaciju","fm.fine":"Ne dijelimo podatke s trećima",
+"fm.gdpr":"Pristajem na obradu osobnih podataka sukladno Politici privatnosti","fm.send":"Zakažite konzultaciju",
 "fm.okt":"Hvala!","fm.okd":"Upit primljen. Javit ćemo se u 24h.",
 
 "leg.label":"Pravne informacije","leg.title":"Pravni uvjeti",
@@ -719,22 +778,19 @@ uk:[
 {q:"Загальні умови використання",a:"Цей веб-сайт належить та управляється компанією SigurHaus d.o.o., зареєстрованою в Республіці Хорватія. OIB (податковий номер): XXXXXXXXXX. Сідло: Спліт, Хорватія. Використовуючи цей сайт, ви погоджуєтесь з цими умовами. Інформація на сайті має виключно інформаційний характер і не є публічною офертою згідно із законодавством Республіки Хорватія. Всі деталі щодо послуг, строків та вартості узгоджуються індивідуально та фіксуються у двосторонньому договорі. Компанія зареєстрована у Торговому суді м. Спліт та діє відповідно до чинного законодавства РХ."},
 {q:"Політика захисту персональних даних",a:"Відповідно до Загального регламенту захисту даних (GDPR — Uredba EU 2016/679), ми збираємо лише ті персональні дані, які ви добровільно надаєте через форму зв'язку: ім'я, телефон, email. Ваші дані використовуються виключно для зв'язку з вами щодо запитуваних послуг. Ми не передаємо, не продаємо та не розкриваємо ваші дані третім особам без вашої згоди, крім випадків, передбачених законом. Дані зберігаються на захищених серверах в ЄС. Ви маєте право на доступ, виправлення, видалення ваших даних, а також право відкликати згоду в будь-який момент, надіславши запит на info@sigurhaus.hr."},
 {q:"Відповідальність та обмеження",a:"SigurHaus d.o.o. не несе відповідальності за: тимчасові перебої в роботі сайту, неточності в інформації на сайті (оскільки вона має загальний інформаційний характер), дії третіх осіб або форс-мажорні обставини. Всі проєктні зобов'язання, строки, вартість та гарантійні умови визначаються виключно у індивідуальному договорі між замовником та SigurHaus d.o.o. Договір регулюється законодавством Республіки Хорватія. У разі спорів компетентним є суд за місцем реєстрації компанії."},
-{q:"Авторські права та інтелектуальна власність",a:"Весь вміст цього веб-сайту (тексти, графіка, логотипи, дизайн, структура) є власністю SigurHaus d.o.o. та захищений авторським правом згідно з хорватським та міжнародним законодавством. Будь-яке копіювання, відтворення або поширення матеріалів сайту без письмової згоди власника заборонено. Фотографії об'єктів на сайті використовуються для ілюстрації та можуть відрізнятися від фактичного вигляду."},
-{q:"Реквізити компанії",a:"SigurHaus d.o.o. · OIB: XXXXXXXXXX · Сідло: Спліт, Хорватія · Торговий суд: Trgovački sud u Splitu · Контакт: info@sigurhaus.hr · Телефон: +385 XX XXX XXXX · IBAN: HRXXXXXXXXXXXXXXXXX · Банк: [назва банку] · SWIFT: XXXXXXXX"}
+{q:"Авторські права та інтелектуальна власність",a:"Весь вміст цього веб-сайту (тексти, графіка, логотипи, дизайн, структура) є власністю SigurHaus d.o.o. та захищений авторським правом згідно з хорватським та міжнародним законодавством. Будь-яке копіювання, відтворення або поширення матеріалів сайту без письмової згоди власника заборонено. Фотографії об'єктів на сайті використовуються для ілюстрації та можуть відрізнятися від фактичного вигляду."}
 ],
 en:[
 {q:"Terms of Use",a:"This website is owned and operated by SigurHaus d.o.o., registered in the Republic of Croatia. OIB (tax ID): XXXXXXXXXX. Registered office: Split, Croatia. By using this site, you agree to these terms. All information is for informational purposes only and does not constitute a public offer under Croatian law. All service details, timelines, and costs are agreed individually and fixed in a bilateral contract. The company is registered with the Commercial Court of Split."},
 {q:"Privacy & Data Protection Policy",a:"In accordance with the General Data Protection Regulation (GDPR — EU Regulation 2016/679), we collect only personal data you voluntarily provide: name, phone, email. Data is used solely to contact you regarding requested services. We do not transfer, sell, or disclose your data to third parties without your consent, except as required by law. Data is stored on protected servers within the EU. You have the right to access, correct, delete your data, and withdraw consent at any time by emailing info@sigurhaus.hr."},
 {q:"Liability & Limitations",a:"SigurHaus d.o.o. is not liable for: temporary website disruptions, inaccuracies in site information (as it is general in nature), actions of third parties, or force majeure. All project obligations, timelines, costs, and warranty terms are defined exclusively in the individual contract. The contract is governed by the laws of the Republic of Croatia. In case of disputes, the court at the company's registered office has jurisdiction."},
-{q:"Copyright & Intellectual Property",a:"All content on this website (text, graphics, logos, design, structure) is the property of SigurHaus d.o.o. and is protected by copyright under Croatian and international law. Any copying, reproduction, or distribution without written consent is prohibited. Property photographs are illustrative and may differ from actual appearance."},
-{q:"Company Details",a:"SigurHaus d.o.o. · OIB: XXXXXXXXXX · Registered office: Split, Croatia · Commercial Court: Trgovački sud u Splitu · Contact: info@sigurhaus.hr · Phone: +385 XX XXX XXXX · IBAN: HRXXXXXXXXXXXXXXXXX · Bank: [bank name] · SWIFT: XXXXXXXX"}
+{q:"Copyright & Intellectual Property",a:"All content on this website (text, graphics, logos, design, structure) is the property of SigurHaus d.o.o. and is protected by copyright under Croatian and international law. Any copying, reproduction, or distribution without written consent is prohibited. Property photographs are illustrative and may differ from actual appearance."}
 ],
 hr:[
 {q:"Uvjeti korištenja",a:"Ova web stranica je u vlasništvu i pod upravljanjem tvrtke SigurHaus d.o.o., registrirane u Republici Hrvatskoj. OIB: XXXXXXXXXX. Sjedište: Split, Hrvatska. Korištenjem ove stranice prihvaćate ove uvjete. Sve informacije na stranici imaju isključivo informativni karakter i ne predstavljaju javnu ponudu sukladno zakonodavstvu RH. Svi detalji o uslugama, rokovima i cijenama dogovaraju se individualno i utvrđuju dvostranskim ugovorom. Tvrtka je upisana u sudski registar Trgovačkog suda u Splitu te posluje sukladno važećem zakonodavstvu RH."},
 {q:"Politika zaštite osobnih podataka",a:"Sukladno Općoj uredbi o zaštiti podataka (GDPR — Uredba EU 2016/679), prikupljamo samo osobne podatke koje dobrovoljno pružite putem obrasca za kontakt: ime, telefon, email. Vaši podaci koriste se isključivo za kontaktiranje u vezi zatraženih usluga. Ne prenosimo, ne prodajemo niti ne otkrivamo Vaše podatke trećim stranama bez Vaše suglasnosti, osim u slučajevima propisanim zakonom. Podaci se pohranjuju na zaštićenim poslužiteljima unutar EU. Imate pravo na pristup, ispravak, brisanje Vaših podataka te pravo na povlačenje suglasnosti u bilo kojem trenutku slanjem zahtjeva na info@sigurhaus.hr."},
 {q:"Odgovornost i ograničenja",a:"SigurHaus d.o.o. ne odgovara za: privremene prekide u radu stranice, netočnosti u informacijama na stranici (budući da su općeg informativnog karaktera), radnje trećih strana ili višu silu. Sve projektne obveze, rokovi, troškovi i jamstveni uvjeti utvrđuju se isključivo individualnim ugovorom između naručitelja i SigurHaus d.o.o. Ugovor se regulira zakonodavstvom Republike Hrvatske. U slučaju sporova nadležan je sud prema sjedištu tvrtke."},
-{q:"Autorska prava i intelektualno vlasništvo",a:"Sav sadržaj ove web stranice (tekstovi, grafika, logotipi, dizajn, struktura) vlasništvo je tvrtke SigurHaus d.o.o. te je zaštićen autorskim pravom sukladno hrvatskom i međunarodnom zakonodavstvu. Svako kopiranje, reprodukcija ili distribucija materijala bez pisane suglasnosti vlasnika je zabranjeno. Fotografije objekata na stranici su ilustrativne i mogu se razlikovati od stvarnog izgleda."},
-{q:"Podaci o tvrtki",a:"SigurHaus d.o.o. · OIB: XXXXXXXXXX · Sjedište: Split, Hrvatska · Trgovački sud: Trgovački sud u Splitu · Kontakt: info@sigurhaus.hr · Telefon: +385 XX XXX XXXX · IBAN: HRXXXXXXXXXXXXXXXXX · Banka: [naziv banke] · SWIFT: XXXXXXXX · Uvid u Sudski registar: sudreg.pravosudje.hr"}
+{q:"Autorska prava i intelektualno vlasništvo",a:"Sav sadržaj ove web stranice (tekstovi, grafika, logotipi, dizajn, struktura) vlasništvo je tvrtke SigurHaus d.o.o. te je zaštićen autorskim pravom sukladno hrvatskom i međunarodnom zakonodavstvu. Svako kopiranje, reprodukcija ili distribucija materijala bez pisane suglasnosti vlasnika je zabranjeno. Fotografije objekata na stranici su ilustrativne i mogu se razlikovati od stvarnog izgleda."}
 ]};
 
 let lang='uk',curRev=0;
@@ -746,6 +802,83 @@ function setLang(l){
   document.getElementById('langCur').innerHTML=names[l]+' <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg>';
   document.querySelectorAll('.lang-opt').forEach(b=>b.classList.toggle('active',b.textContent.includes(l==='uk'?'Укр':l==='en'?'Eng':'Hrv')));
   closeLang();buildFAQ();buildLegal();buildRevs();
+
+/* Phone country code selector */
+const COUNTRIES=[
+{iso:"hr",n:"Hrvatska",c:"+385"},
+{iso:"ua",n:"Україна",c:"+380"},
+{iso:"pl",n:"Polska",c:"+48"},
+{iso:"de",n:"Deutschland",c:"+49"},
+{iso:"gb",n:"United Kingdom",c:"+44"},
+{iso:"at",n:"Österreich",c:"+43"},
+{iso:"it",n:"Italia",c:"+39"},
+{iso:"fr",n:"France",c:"+33"},
+{iso:"es",n:"España",c:"+34"},
+{iso:"nl",n:"Nederland",c:"+31"},
+{iso:"be",n:"België",c:"+32"},
+{iso:"ch",n:"Schweiz",c:"+41"},
+{iso:"dk",n:"Danmark",c:"+45"},
+{iso:"se",n:"Sverige",c:"+46"},
+{iso:"no",n:"Norge",c:"+47"},
+{iso:"fi",n:"Suomi",c:"+358"},
+{iso:"ie",n:"Ireland",c:"+353"},
+{iso:"pt",n:"Portugal",c:"+351"},
+{iso:"gr",n:"Ελλάδα",c:"+30"},
+{iso:"hu",n:"Magyarország",c:"+36"},
+{iso:"ro",n:"România",c:"+40"},
+{iso:"bg",n:"България",c:"+359"},
+{iso:"cz",n:"Česko",c:"+420"},
+{iso:"sk",n:"Slovensko",c:"+421"},
+{iso:"si",n:"Slovenija",c:"+386"},
+{iso:"rs",n:"Србија",c:"+381"},
+{iso:"ba",n:"BiH",c:"+387"},
+{iso:"me",n:"Crna Gora",c:"+382"},
+{iso:"al",n:"Shqipëri",c:"+355"},
+{iso:"lt",n:"Lietuva",c:"+370"},
+{iso:"lv",n:"Latvija",c:"+371"},
+{iso:"ee",n:"Eesti",c:"+372"},
+{iso:"by",n:"Беларусь",c:"+375"},
+{iso:"tr",n:"Türkiye",c:"+90"},
+{iso:"il",n:"Israel",c:"+972"},
+{iso:"ae",n:"UAE",c:"+971"},
+{iso:"us",n:"USA",c:"+1"},
+{iso:"ca",n:"Canada",c:"+1"},
+{iso:"au",n:"Australia",c:"+61"},
+{iso:"br",n:"Brasil",c:"+55"}
+];
+function flagImg(iso,size){return '<img src="https://flagcdn.com/w'+(size||40)+'/'+iso+'.png" width="'+(size||20)+'" height="'+Math.round((size||20)*0.75)+'" alt="" style="border-radius:2px;object-fit:cover;display:block">'}
+let selCountry=0;
+function buildPhList(filter){
+  const list=document.getElementById('phList');
+  const f=(filter||'').toLowerCase();
+  list.innerHTML=COUNTRIES.filter(c=>!f||c.n.toLowerCase().includes(f)||c.c.includes(f))
+    .map((c,i)=>{
+      const idx=COUNTRIES.indexOf(c);
+      return '<div class="ph-item'+(idx===selCountry?' active':'')+'" onclick="pickCountry('+idx+')"><span class="ph-item-flag">'+flagImg(c.iso,20)+'</span><span class="ph-item-name">'+c.n+'</span><span class="ph-item-code">'+c.c+'</span></div>';
+    }).join('');
+}
+function pickCountry(i){
+  selCountry=i;
+  document.getElementById('phFlag').innerHTML=flagImg(COUNTRIES[i].iso,20);
+  document.getElementById('phNumCode').textContent=COUNTRIES[i].c;
+  document.getElementById('phDd').parentElement.classList.remove('open');
+  document.getElementById('phSearch').value='';
+  document.getElementById('fph').focus();
+  buildPhList();
+}
+function togglePhDd(){
+  const field=document.getElementById('phDd').parentElement;
+  field.classList.toggle('open');
+  if(field.classList.contains('open')){buildPhList();setTimeout(()=>document.getElementById('phSearch').focus(),50)}
+}
+function filterCountries(){buildPhList(document.getElementById('phSearch').value)}
+document.addEventListener('click',e=>{
+  const field=document.querySelector('.ph-field');
+  if(field&&!field.contains(e.target))field.classList.remove('open');
+});
+buildPhList();
+
+
 
 }
 function toggleLang(){document.getElementById('langDd').classList.toggle('open')}
@@ -776,12 +909,36 @@ function buildRevs(){
 function showRev(i){curRev=i;buildRevs()}
 setInterval(()=>{const r=REVIEWS[lang]||REVIEWS.uk;showRev((curRev+1)%r.length)},6000);
 
-function onSvc(){const v=document.getElementById('fSvc').value;document.getElementById('fgProp').classList.toggle('vis',v==='turnkey')}
-function prefill(p){document.getElementById('fSvc').value='turnkey';onSvc();document.getElementById('fProp').value=p;setTimeout(()=>document.getElementById('contact').scrollIntoView({behavior:'smooth'}),80)}
+
+function prefill(p){document.getElementById('fSvc').value='turnkey';setTimeout(()=>document.getElementById('contact').scrollIntoView({behavior:'smooth'}),80)}
 function submit(){
-  const n=document.getElementById('fn').value.trim(),e=document.getElementById('fem').value.trim();
+  const n=document.getElementById('fn').value.trim(),e=document.getElementById('fem').value.trim(),g=document.getElementById('fGdpr').checked;
   if(!n||!e){alert(lang==='en'?'Please fill name and email':lang==='hr'?'Unesite ime i email':'Введіть ім\'я та email');return}
-  document.getElementById('formC').style.display='none';document.getElementById('formOk').style.display='block';
+  if(!g){alert(lang==='en'?'Please accept the privacy policy':lang==='hr'?'Prihvatite politiku privatnosti':'Прийміть політику конфіденційності');return}
+  showPopup();
+}
+function showPopup(){
+  const titles={uk:'Дякуємо! 🎉',en:'Thank You! 🎉',hr:'Hvala! 🎉'};
+  const texts={
+    uk:'Вашу заявку успішно відправлено! Наш менеджер зв\'яжеться з вами у вибраний вами час. Очікуйте дзвінок або повідомлення впродовж 24 годин.',
+    en:'Your request has been sent successfully! Our manager will contact you at your preferred time. Expect a call or message within 24 hours.',
+    hr:'Vaš zahtjev je uspješno poslan! Naš menadžer će vas kontaktirati u odabrano vrijeme. Očekujte poziv ili poruku unutar 24 sata.'
+  };
+  const btns={uk:'Чудово!',en:'Great!',hr:'Odlično!'};
+  document.getElementById('popupTitle').textContent=titles[lang]||titles.uk;
+  document.getElementById('popupText').textContent=texts[lang]||texts.uk;
+  document.getElementById('popupBtn').textContent=btns[lang]||btns.uk;
+  document.getElementById('popupOv').classList.add('show');
+  document.body.style.overflow='hidden';
+}
+function closePopup(){
+  document.getElementById('popupOv').classList.remove('show');
+  document.body.style.overflow='';
+  // Reset form
+  document.getElementById('fn').value='';document.getElementById('fph').value='';
+  document.getElementById('fem').value='';document.getElementById('fFmt').value='';
+  document.getElementById('fSvc').value='';document.getElementById('fFmt').value='';document.getElementById('fTime').value='';
+  document.getElementById('fGdpr').checked=false;
 }
 function goTo(s){document.querySelector(s).scrollIntoView({behavior:'smooth'})}
 function openMob(){document.getElementById('mobOv').classList.add('open');document.body.style.overflow='hidden'}
@@ -797,6 +954,96 @@ document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
 
 buildFAQ();buildLegal();buildRevs();
 
+/* Phone country code selector */
+const COUNTRIES=[
+{iso:"hr",n:"Hrvatska",c:"+385"},
+{iso:"ua",n:"Україна",c:"+380"},
+{iso:"pl",n:"Polska",c:"+48"},
+{iso:"de",n:"Deutschland",c:"+49"},
+{iso:"gb",n:"United Kingdom",c:"+44"},
+{iso:"at",n:"Österreich",c:"+43"},
+{iso:"it",n:"Italia",c:"+39"},
+{iso:"fr",n:"France",c:"+33"},
+{iso:"es",n:"España",c:"+34"},
+{iso:"nl",n:"Nederland",c:"+31"},
+{iso:"be",n:"België",c:"+32"},
+{iso:"ch",n:"Schweiz",c:"+41"},
+{iso:"dk",n:"Danmark",c:"+45"},
+{iso:"se",n:"Sverige",c:"+46"},
+{iso:"no",n:"Norge",c:"+47"},
+{iso:"fi",n:"Suomi",c:"+358"},
+{iso:"ie",n:"Ireland",c:"+353"},
+{iso:"pt",n:"Portugal",c:"+351"},
+{iso:"gr",n:"Ελλάδα",c:"+30"},
+{iso:"hu",n:"Magyarország",c:"+36"},
+{iso:"ro",n:"România",c:"+40"},
+{iso:"bg",n:"България",c:"+359"},
+{iso:"cz",n:"Česko",c:"+420"},
+{iso:"sk",n:"Slovensko",c:"+421"},
+{iso:"si",n:"Slovenija",c:"+386"},
+{iso:"rs",n:"Србија",c:"+381"},
+{iso:"ba",n:"BiH",c:"+387"},
+{iso:"me",n:"Crna Gora",c:"+382"},
+{iso:"al",n:"Shqipëri",c:"+355"},
+{iso:"lt",n:"Lietuva",c:"+370"},
+{iso:"lv",n:"Latvija",c:"+371"},
+{iso:"ee",n:"Eesti",c:"+372"},
+{iso:"by",n:"Беларусь",c:"+375"},
+{iso:"tr",n:"Türkiye",c:"+90"},
+{iso:"il",n:"Israel",c:"+972"},
+{iso:"ae",n:"UAE",c:"+971"},
+{iso:"us",n:"USA",c:"+1"},
+{iso:"ca",n:"Canada",c:"+1"},
+{iso:"au",n:"Australia",c:"+61"},
+{iso:"br",n:"Brasil",c:"+55"}
+];
+function flagImg(iso,size){return '<img src="https://flagcdn.com/w'+(size||40)+'/'+iso+'.png" width="'+(size||20)+'" height="'+Math.round((size||20)*0.75)+'" alt="" style="border-radius:2px;object-fit:cover;display:block">'}
+let selCountry=0;
+function buildPhList(filter){
+  const list=document.getElementById('phList');
+  const f=(filter||'').toLowerCase();
+  list.innerHTML=COUNTRIES.filter(c=>!f||c.n.toLowerCase().includes(f)||c.c.includes(f))
+    .map((c,i)=>{
+      const idx=COUNTRIES.indexOf(c);
+      return '<div class="ph-item'+(idx===selCountry?' active':'')+'" onclick="pickCountry('+idx+')"><span class="ph-item-flag">'+flagImg(c.iso,20)+'</span><span class="ph-item-name">'+c.n+'</span><span class="ph-item-code">'+c.c+'</span></div>';
+    }).join('');
+}
+function pickCountry(i){
+  selCountry=i;
+  document.getElementById('phFlag').innerHTML=flagImg(COUNTRIES[i].iso,20);
+  document.getElementById('phNumCode').textContent=COUNTRIES[i].c;
+  document.getElementById('phDd').parentElement.classList.remove('open');
+  document.getElementById('phSearch').value='';
+  document.getElementById('fph').focus();
+  buildPhList();
+}
+function togglePhDd(){
+  const field=document.getElementById('phDd').parentElement;
+  field.classList.toggle('open');
+  if(field.classList.contains('open')){buildPhList();setTimeout(()=>document.getElementById('phSearch').focus(),50)}
+}
+function filterCountries(){buildPhList(document.getElementById('phSearch').value)}
+document.addEventListener('click',e=>{
+  const field=document.querySelector('.ph-field');
+  if(field&&!field.contains(e.target))field.classList.remove('open');
+});
+buildPhList();
+
+
+
 </script>
+
+<!-- Success popup -->
+<div class="popup-overlay" id="popupOv" onclick="closePopup()">
+  <div class="popup" onclick="event.stopPropagation()">
+    <button class="popup-x" onclick="closePopup()">✕</button>
+    <div class="popup-icon">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+    </div>
+    <h3 id="popupTitle"></h3>
+    <p id="popupText"></p>
+    <button class="popup-btn" onclick="closePopup()" id="popupBtn"></button>
+  </div>
+</div>
 </body>
 </html>
