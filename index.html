@@ -7,7 +7,7 @@
 <meta name="description" content="SIGURHAUS d.o.o. — будівельна компанія в Хорватії. Монолітні роботи та будівництво під ключ для інвесторів. Фундаменти, стіни, перекриття, колони. Загреб, Хорватія.">
 <meta name="keywords" content="будівництво Хорватія, монолітні роботи, будівництво під ключ, SigurHaus, бетонні роботи, фундаменти Хорватія, інвестори нерухомість Хорватія, građevinarstvo Hrvatska, monolitni radovi, gradnja pod ključ">
 <meta name="author" content="SIGURHAUS d.o.o.">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow"> <!-- ТЕСТ: змінити на index,follow при публікації -->
 <meta name="language" content="Ukrainian">
 <link rel="canonical" href="https://sigurhaus.hr/">
 <link rel="alternate" hreflang="uk" href="https://sigurhaus.hr/">
@@ -154,7 +154,7 @@ section{padding:64px 48px}
 .pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
 .pc{overflow:hidden;border-radius:var(--radius);position:relative;cursor:default;background:var(--bg-warm)}
 .pc-imgs{position:relative;width:100%;height:240px;overflow:hidden}
-.pc-imgs img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.7) saturate(.75);opacity:0;transition:opacity .6s}
+.pc-imgs img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;filter:brightness(.7) saturate(.75);opacity:0;transition:opacity .6s}
 .pc-imgs img.active{opacity:1}
 .pc:hover .pc-imgs img.active{filter:brightness(.8) saturate(.9)}
 .pc-arr{position:absolute;top:50%;transform:translateY(-50%);width:28px;height:28px;border-radius:50%;background:rgba(0,0,0,.4);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.15);color:#fff;display:flex;align-items:center;justify-content:center;z-index:3;opacity:0;transition:opacity .3s;padding:0}
@@ -544,12 +544,8 @@ footer{background:var(--bg-deep);padding:44px 48px}
     <div class="ft-col"><h6 data-t="ft.c2">Послуги</h6><ul><li><a href="#contact" data-t="ft.s1">Будівництво під ключ</a></li><li><a href="#contact" data-t="ft.s2">Монолітні роботи</a></li><li><a href="#contact" data-t="ft.s3">Консультації</a></li></ul></div>
     <div class="ft-col"><h6 data-t="ft.c3">Контакти</h6><ul><li><a href="mailto:info@sigurhaus.hr">info@sigurhaus.hr</a></li><li><a href="tel:+385XXXXXXXX">+385 XX XXX XXXX</a></li><li><a href="#contact" data-t="ct.addr">Хорватія, Загреб</a></li></ul></div>
   </div>
-  <div class="ft-bot"><p>© 2025 SigurHaus d.o.o. All rights reserved.</p>
-    <div class="socials">
-      <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-      <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-      <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></a>
-    </div>
+  <div class="ft-bot"><p>© 2026 SigurHaus d.o.o. All rights reserved.</p>
+    
   </div>
 </footer>
 
@@ -839,7 +835,7 @@ function slideCard(ci,dir,manual){
   imgs.forEach(function(img,i){img.classList.toggle('active',i===cur)});
   dots.forEach(function(dot,i){dot.classList.toggle('on',i===cur)});
 }
-setInterval(function(){for(var i=0;i<6;i++)slideCard(i,1,true)},3000);
+setInterval(function(){for(var i=0;i<6;i++)slideCard(i,1,true)},10000);
 
 buildFAQ();buildLegal();buildRevs();buildPhList();
 </script>
