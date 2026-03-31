@@ -861,5 +861,30 @@ setInterval(function(){for(var i=0;i<5;i++)slideCard(i,1,true)},10000);
 
 buildFAQ();buildLegal();buildRevs();buildPhList();
 </script>
+
+<!-- Cookie Banner -->
+<style>
+.ck-banner{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:var(--bg-deep);border-top:1px solid rgba(255,255,255,.1);padding:16px 24px;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;transform:translateY(100%);transition:transform .4s ease;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.ck-banner.show{transform:translateY(0)}
+.ck-text{color:rgba(255,255,255,.75);font-size:.82rem;line-height:1.5}
+.ck-text a{color:var(--teal-lt);text-decoration:underline;text-underline-offset:2px}
+.ck-btns{display:flex;gap:8px;flex-shrink:0}
+.ck-btn{padding:8px 20px;border-radius:8px;font-size:.8rem;font-weight:500;border:none;font-family:inherit;transition:all .25s}
+.ck-accept{background:var(--teal);color:#fff}.ck-accept:hover{background:var(--teal-lt)}
+.ck-decline{background:rgba(255,255,255,.08);color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.1)}.ck-decline:hover{background:rgba(255,255,255,.12)}
+@media(max-width:600px){.ck-banner{flex-direction:column;text-align:center;padding:20px 16px}.ck-btns{width:100%;justify-content:center}}
+</style>
+<div class="ck-banner" id="ckBanner">
+<span class="ck-text">Цей сайт використовує файли cookie для забезпечення найкращого досвіду. <a href="#legal">Політика конфіденційності</a></span>
+<div class="ck-btns">
+<button class="ck-btn ck-decline" onclick="ckClose()">Відхилити</button>
+<button class="ck-btn ck-accept" onclick="ckAccept()">Прийняти</button>
+</div>
+</div>
+<script>
+(function(){var s=localStorage.getItem('ck_consent');if(!s)setTimeout(function(){document.getElementById('ckBanner').classList.add('show')},1500)})();
+function ckAccept(){localStorage.setItem('ck_consent','accepted');document.getElementById('ckBanner').classList.remove('show')}
+function ckClose(){localStorage.setItem('ck_consent','declined');document.getElementById('ckBanner').classList.remove('show')}
+</script>
 </body>
 </html>
