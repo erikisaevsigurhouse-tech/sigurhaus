@@ -767,10 +767,37 @@ setInterval(()=>{const r=REVIEWS[lang]||REVIEWS.uk;showRev((curRev+1)%r.length)}
 function togglePick(btn,gid){document.querySelectorAll('#'+gid+' .toggle-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active')}
 
 function submit(){
-  const n=document.getElementById('fn').value.trim(),ph=document.getElementById('fph').value.trim(),g=document.getElementById('fGdpr').checked;
+  const n=document.getElementById('fn').value.trim(),ph=document.getElementById('fph').value.trim(),em=document.getElementById('fem').value.trim(),g=document.getElementById('fGdpr').checked;
   if(!n||!ph){alert(lang==='en'?'Please fill name and phone':lang==='hr'?'Unesite ime i telefon':'Введіть ім\'я та телефон');return}
   if(!g){alert(lang==='en'?'Please accept the privacy policy':lang==='hr'?'Prihvatite politiku privatnosti':'Прийміть політику конфіденційності');return}
-  showPopup();
+  const code=document.getElementById('phNumCode').textContent;
+  const svcBtn=document.querySelector('#svcToggles .toggle-btn.active');
+  const fmtBtn=document.querySelector('#fmtToggles .toggle-btn.active');
+  const svc=svcBtn?svcBtn.textContent:'Не обрано';
+  const fmt=fmtBtn?fmtBtn.textContent:'Не обрано';
+  const btn=document.querySelector('.btn-send');
+  btn.disabled=true;btn.style.opacity='.6';
+  fetch('https://api.web3forms.com/submit',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({
+      access_key:'b25101bd-66c7-484b-921a-34010b1ccdf5',
+      subject:'Нова заявка з сайту SigurHaus',
+      from_name:'SigurHaus Website',
+      name:n,
+      phone:code+' '+ph,
+      email:em||'Не вказано',
+      service:svc,
+      contact_format:fmt
+    })
+  }).then(r=>r.json()).then(d=>{
+    btn.disabled=false;btn.style.opacity='1';
+    if(d.success){showPopup()}
+    else{alert(lang==='en'?'Error sending. Please try again.':lang==='hr'?'Greška. Pokušajte ponovo.':'Помилка відправки. Спробуйте ще раз.')}
+  }).catch(()=>{
+    btn.disabled=false;btn.style.opacity='1';
+    alert(lang==='en'?'Connection error. Please try again.':lang==='hr'?'Greška veze. Pokušajte ponovo.':'Помилка з\'єднання. Спробуйте ще раз.');
+  });
 }
 function showPopup(){
   const t={uk:'Дякуємо! 🎉',en:'Thank You! 🎉',hr:'Hvala! 🎉'};
