@@ -156,8 +156,8 @@ section{padding:64px 48px}
 .proj-hd{margin-bottom:28px}
 .pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
 .pc{overflow:hidden;border-radius:var(--radius);position:relative;cursor:default;background:var(--bg-warm)}
-.pc-imgs{position:relative;width:100%;height:380px;overflow:hidden;background:#0b1a15}
-.pc-imgs img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:brightness(.85) saturate(.85);opacity:0;transition:opacity .6s}
+.pc-imgs{position:relative;width:100%;height:240px;overflow:hidden}
+.pc-imgs img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;filter:brightness(.7) saturate(.75);opacity:0;transition:opacity .6s}
 .pc-imgs img.active{opacity:1}
 .pc:hover .pc-imgs img.active{filter:brightness(.8) saturate(.9)}
 .pc-arr{position:absolute;top:50%;transform:translateY(-50%);width:28px;height:28px;border-radius:50%;background:rgba(0,0,0,.4);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.15);color:#fff;display:flex;align-items:center;justify-content:center;z-index:3;opacity:0;transition:opacity .3s;padding:0}
@@ -333,7 +333,7 @@ footer{background:var(--bg-deep);padding:44px 48px}
   section{padding:36px 20px}.hero-ct{padding:calc(var(--nav-h) + 28px) 20px 36px}
   .hero-h{font-size:1.9rem}.hero-stats{gap:16px;flex-wrap:wrap}.hs-n{font-size:1.6rem}
   .svc-grid{grid-template-columns:1fr;gap:10px}.svc-card{padding:22px 18px}
-  .pgrid{grid-template-columns:1fr;gap:8px}.pc-imgs{height:280px}
+  .pgrid{grid-template-columns:1fr;gap:8px}.pc-imgs{height:180px}
   .steps{grid-template-columns:1fr;gap:1px}.step::after{display:none}.step{padding:18px 16px}
   .feats{grid-template-columns:1fr;gap:8px}.feat{padding:14px;gap:10px}
   .frow{grid-template-columns:1fr}
@@ -348,7 +348,7 @@ footer{background:var(--bg-deep);padding:44px 48px}
   .hero-btns{flex-direction:column;gap:8px}.btn-p,.btn-g{text-align:center;width:100%;padding:13px 24px}
   .hero-stats{flex-direction:column;gap:10px}
   section{padding:28px 14px}.st{font-size:1.6rem}
-  .pc-imgs{height:240px}
+  .pc-imgs{height:150px}
   #reviews{padding:28px 14px}#legal{padding:16px 14px}footer{padding:22px 14px}
 }
 @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}.rv{opacity:1;transform:none}}
