@@ -352,6 +352,27 @@ footer{background:var(--bg-deep);padding:44px 48px}
   #reviews{padding:28px 14px}#legal{padding:16px 14px}footer{padding:22px 14px}
 }
 @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}.rv{opacity:1;transform:none}}
+
+/* LIGHTBOX */
+.lightbox{position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;padding:60px 20px;cursor:zoom-out;animation:lbFadeIn .25s ease}
+.lightbox.active{display:flex}
+@keyframes lbFadeIn{from{opacity:0}to{opacity:1}}
+.lightbox-img-wrap{position:relative;max-width:100%;max-height:100%;display:flex;align-items:center;justify-content:center}
+.lightbox img{max-width:100%;max-height:100%;object-fit:contain;border-radius:6px;box-shadow:0 20px 80px rgba(0,0,0,.6);cursor:default}
+.lightbox-close{position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.12);color:#fff;font-size:28px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;z-index:2;border:none;font-family:inherit}
+.lightbox-close:hover{background:rgba(255,255,255,.25);transform:rotate(90deg)}
+.lightbox-prev,.lightbox-next{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.12);color:#fff;font-size:32px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;z-index:2;border:none;font-family:inherit}
+.lightbox-prev{left:16px}.lightbox-next{right:16px}
+.lightbox-prev:hover,.lightbox-next:hover{background:rgba(255,255,255,.25)}
+.lightbox-counter{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);color:#fff;font-size:13px;background:rgba(0,0,0,.5);padding:6px 14px;border-radius:999px}
+.pc-imgs img{cursor:zoom-in}
+@media(max-width:720px){
+.lightbox{padding:50px 10px}
+.lightbox-close{width:38px;height:38px;font-size:24px;top:10px;right:10px}
+.lightbox-prev,.lightbox-next{width:42px;height:42px;font-size:26px}
+.lightbox-prev{left:8px}.lightbox-next{right:8px}
+}
+
 </style>
 </head>
 <body>
@@ -863,6 +884,62 @@ function slideCard(ci,dir,manual){
 setInterval(function(){for(var i=0;i<5;i++)slideCard(i,1,true)},10000);
 
 buildFAQ();buildLegal();buildRevs();buildPhList();
+</script>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-label="Image viewer">
+<button class="lightbox-close" id="lb-close" aria-label="Close">×</button>
+<button class="lightbox-prev" id="lb-prev" aria-label="Previous">‹</button>
+<button class="lightbox-next" id="lb-next" aria-label="Next">›</button>
+<div class="lightbox-img-wrap"><img id="lb-img" src="" alt=""></div>
+<div class="lightbox-counter" id="lb-counter"></div>
+</div>
+
+<script>
+(function(){
+var lb=document.getElementById('lightbox');
+if(!lb)return;
+var lbImg=document.getElementById('lb-img');
+var lbClose=document.getElementById('lb-close');
+var lbPrev=document.getElementById('lb-prev');
+var lbNext=document.getElementById('lb-next');
+var lbCounter=document.getElementById('lb-counter');
+var currentList=[];
+var currentIdx=0;
+function open(list,idx){currentList=list;currentIdx=idx;show();lb.classList.add('active');document.body.style.overflow='hidden'}
+function show(){lbImg.src=currentList[currentIdx];lbCounter.textContent=(currentIdx+1)+' / '+currentList.length}
+function close(){lb.classList.remove('active');document.body.style.overflow=''}
+function next(){currentIdx=(currentIdx+1)%currentList.length;show()}
+function prev(){currentIdx=(currentIdx-1+currentList.length)%currentList.length;show()}
+lbClose.addEventListener('click',close);
+lbPrev.addEventListener('click',function(e){e.stopPropagation();prev()});
+lbNext.addEventListener('click',function(e){e.stopPropagation();next()});
+lb.addEventListener('click',function(e){if(e.target===lb||e.target.classList.contains('lightbox-img-wrap'))close()});
+document.addEventListener('keydown',function(e){
+if(!lb.classList.contains('active'))return;
+if(e.key==='Escape')close();
+else if(e.key==='ArrowRight')next();
+else if(e.key==='ArrowLeft')prev();
+});
+var touchStartX=0;
+lb.addEventListener('touchstart',function(e){touchStartX=e.touches[0].clientX},{passive:true});
+lb.addEventListener('touchend',function(e){
+var dx=e.changedTouches[0].clientX-touchStartX;
+if(Math.abs(dx)>50){if(dx<0)next();else prev()}
+},{passive:true});
+// Bind to all project cards
+var cards=document.querySelectorAll('.pc[data-card]');
+cards.forEach(function(card){
+var imgs=card.querySelectorAll('.pc-imgs img');
+var urls=[];
+imgs.forEach(function(img){urls.push(img.src)});
+imgs.forEach(function(img,idx){
+img.addEventListener('click',function(e){
+e.stopPropagation();
+open(urls,idx);
+});
+});
+});
+})();
 </script>
 
 <!-- Cookie Banner -->
