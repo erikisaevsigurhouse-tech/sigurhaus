@@ -173,6 +173,7 @@ section{padding:64px 48px}
 .pc-ov{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:16px 20px;background:linear-gradient(to top,rgba(10,22,18,.92) 0%,rgba(10,22,18,.6) 35%,rgba(10,22,18,.1) 60%,transparent 80%);z-index:2}
 .pc-badge{display:inline-flex;flex-direction:column;gap:1px;border-radius:6px;padding:6px 10px;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;align-self:flex-start;color:#fff;line-height:1.3;background:rgba(0,0,0,.5);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(42,124,111,.4)}
 .pc-badge small{font-size:.6rem;font-weight:400;opacity:.7;text-transform:none;letter-spacing:0}
+.pc-badge.live{background:rgba(42,124,111,.32);border-color:rgba(56,160,143,.55)}
 .pc-bottom{margin-top:auto}
 .pc-name{font-family:'PT Serif',Georgia,serif;font-size:1.1rem;font-weight:700;color:#fff;line-height:1.25;margin-bottom:4px}
 .pc-type{font-size:.74rem;color:rgba(255,255,255,.6);margin-bottom:3px}
@@ -353,6 +354,22 @@ footer{background:var(--bg-deep);padding:44px 48px}
 }
 @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}.rv{opacity:1;transform:none}}
 
+/* TRUST BAND — AAA bonitetni certifikat */
+.tband{background:var(--bg-warm);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:clamp(30px,4.4vw,46px) 0}
+.tb-mq{overflow:hidden;position:relative}
+.tb-mq::before,.tb-mq::after{content:'';position:absolute;top:0;bottom:0;width:clamp(40px,9%,130px);pointer-events:none;z-index:2}
+.tb-mq::before{left:0;background:linear-gradient(90deg,var(--bg-warm) 10%,transparent 100%)}
+.tb-mq::after{right:0;background:linear-gradient(270deg,var(--bg-warm) 10%,transparent 100%)}
+.tb-track{display:flex;width:max-content;background:var(--bg-warm);animation:tbScroll 46s linear infinite}
+.tb-set{display:flex;align-items:center;gap:46px;padding-right:46px;flex:none}
+.tb-cert{height:auto;flex:none;mix-blend-mode:multiply;width:598px;max-width:none}
+.tb-dot{width:5px;height:5px;border-radius:50%;background:var(--teal);opacity:.45;flex:none}
+.tb-word{font-size:.74rem;letter-spacing:.17em;text-transform:uppercase;color:var(--mid);font-weight:600;white-space:nowrap;flex:none}
+@keyframes tbScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:900px){.tb-set{gap:30px;padding-right:30px}.tb-word{font-size:.68rem}.tb-cert{width:min(598px,86vw)}}
+@media(prefers-reduced-motion:reduce){.tb-track{animation:none!important}}
+
+
 /* LIGHTBOX */
 .lightbox{position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;padding:60px 20px;cursor:zoom-out;animation:lbFadeIn .25s ease}
 .lightbox.active{display:flex}
@@ -402,9 +419,9 @@ footer{background:var(--bg-deep);padding:44px 48px}
     <div class="lang-dd" id="langDd">
       <button class="lang-btn" onclick="toggleLang()" id="langCur">УКР <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="lang-opts">
-        <button class="lang-opt active" onclick="window.location.href='https://sigurhaus.hr/ua/'">Українська</button>
-        <button class="lang-opt" onclick="window.location.href='https://sigurhaus.hr/en/'">English</button>
-        <button class="lang-opt" onclick="window.location.href='https://sigurhaus.hr/'">Hrvatski</button>
+        <button class="lang-opt active" onclick="window.location.href='ua/'">Українська</button>
+        <button class="lang-opt" onclick="window.location.href='en/'">English</button>
+        <button class="lang-opt" onclick="window.location.href='./'">Hrvatski</button>
       </div>
     </div>
     <button class="btn-nav" onclick="goTo('#contact')" data-t="nav.cta">Консультація</button>
@@ -441,6 +458,8 @@ footer{background:var(--bg-deep);padding:44px 48px}
       <div class="pc" data-card="2"><div class="pc-imgs"><img src="./p3-1.jpg" alt="Monolitni radovi Rovinj — stambeni objekt, KOS Development" loading="lazy" class="active"><img src="./p3-2.jpg" alt="Monolitni radovi Rovinj — stambeni objekt, KOS Development" loading="lazy"><button class="pc-arr left" onclick="slideCard(2,-1,true)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></button><button class="pc-arr right" onclick="slideCard(2,1,true)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button><div class="pc-dots"><button class="pc-dot on" onclick="slideCard(2,0)"></button><button class="pc-dot" onclick="slideCard(2,1)"></button></div></div><div class="pc-ov"><div class="pc-badge" data-t="p3.badge">ЗАВЕРШЕНО<br><small>травень 2025</small></div><div class="pc-bottom"><div class="pc-name" data-t="p3.name">Житловий об'єкт, Ровінь</div><div class="pc-type" data-t="p3.type">монолітні роботи</div><div class="pc-inv" data-t="p3.inv">інвестор: KOS Development d.o.o.</div></div></div></div>
       <div class="pc" data-card="3"><div class="pc-imgs"><img src="./p4-1.jpg" alt="Monolitni radovi Varaždin — industrijski objekt, Knauf Insulation" loading="lazy" class="active"><img src="./p4-2.jpg" alt="Monolitni radovi Varaždin — industrijski objekt, Knauf Insulation" loading="lazy"><img src="./p4-3.jpg" alt="Monolitni radovi Varaždin — industrijski objekt, Knauf Insulation" loading="lazy"><img src="./p4-4.jpg" alt="Monolitni radovi Varaždin — industrijski objekt, Knauf Insulation" loading="lazy"><button class="pc-arr left" onclick="slideCard(3,-1,true)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></button><button class="pc-arr right" onclick="slideCard(3,1,true)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button><div class="pc-dots"><button class="pc-dot on" onclick="slideCard(3,0)"></button><button class="pc-dot" onclick="slideCard(3,1)"></button><button class="pc-dot" onclick="slideCard(3,2)"></button><button class="pc-dot" onclick="slideCard(3,3)"></button></div></div><div class="pc-ov"><div class="pc-badge" data-t="p4.badge">ЗАВЕРШЕНО<br><small>грудень 2025</small></div><div class="pc-bottom"><div class="pc-name" data-t="p4.name">Індустріальний об'єкт, Вараждин</div><div class="pc-type" data-t="p4.type">монолітні роботи</div><div class="pc-inv" data-t="p4.inv">інвестор: Knauf Insulation d.o.o. · генпідрядник: NGH Gradnja d.o.o.</div></div></div></div>
       <div class="pc" data-card="4"><div class="pc-imgs"><img src="./p5-1.jpg" alt="Monolitni radovi Matulji — stambeni objekt, KOS Development" loading="lazy" class="active"><img src="./p5-2.jpg" alt="Monolitni radovi Matulji — stambeni objekt, KOS Development" loading="lazy"><img src="./p5-3.jpg" alt="Monolitni radovi Matulji — stambeni objekt, KOS Development" loading="lazy"><button class="pc-arr left" onclick="slideCard(4,-1,true)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></button><button class="pc-arr right" onclick="slideCard(4,1,true)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button><div class="pc-dots"><button class="pc-dot on" onclick="slideCard(4,0)"></button><button class="pc-dot" onclick="slideCard(4,1)"></button><button class="pc-dot" onclick="slideCard(4,2)"></button></div></div><div class="pc-ov"><div class="pc-badge" data-t="p5.badge">ЗАВЕРШЕНО<br><small>травень 2025</small></div><div class="pc-bottom"><div class="pc-name" data-t="p5.name">Житловий об'єкт, Матулі</div><div class="pc-type" data-t="p5.type">монолітні роботи</div><div class="pc-inv" data-t="p5.inv">інвестор: KOS Development d.o.o.</div></div></div></div>
+      <div class="pc" data-card="5"><div class="pc-imgs"><img src="./p6-1.jpg" alt="Armiračko-betonski radovi Donja Stubica — stambena zgrada, NGH Gradnja" loading="lazy" class="active"><img src="./p6-2.jpg" alt="Armiračko-betonski radovi Donja Stubica — stambena zgrada, NGH Gradnja" loading="lazy"><img src="./p6-3.jpg" alt="Armiračko-betonski radovi Donja Stubica — stambena zgrada, NGH Gradnja" loading="lazy"><img src="./p6-4.jpg" alt="Armiračko-betonski radovi Donja Stubica — stambena zgrada, NGH Gradnja" loading="lazy"><button class="pc-arr left" onclick="slideCard(5,-1,true)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></button><button class="pc-arr right" onclick="slideCard(5,1,true)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button><div class="pc-dots"><button class="pc-dot on" onclick="slideCard(5,0)"></button><button class="pc-dot" onclick="slideCard(5,1)"></button><button class="pc-dot" onclick="slideCard(5,2)"></button><button class="pc-dot" onclick="slideCard(5,3)"></button></div></div><div class="pc-ov"><div class="pc-badge live" data-t="p6.badge">В РОБОТІ<br><small>з червня 2026</small></div><div class="pc-bottom"><div class="pc-name" data-t="p6.name">Житловий будинок, Доня Стубіца</div><div class="pc-type" data-t="p6.type">арматурно-бетонні роботи</div><div class="pc-inv" data-t="p6.inv">інвестор: NGH Gradnja d.o.o.</div></div></div></div>
+      <div class="pc" data-card="6"><div class="pc-imgs"><img src="./p7-1.jpg" alt="Armiračko-betonski radovi Zagreb, Medveščak — stambena zgrada, DAGDA Usluge" loading="lazy" class="active"><img src="./p7-2.jpg" alt="Armiračko-betonski radovi Zagreb, Medveščak — stambena zgrada, DAGDA Usluge" loading="lazy"><img src="./p7-3.jpg" alt="Armiračko-betonski radovi Zagreb, Medveščak — stambena zgrada, DAGDA Usluge" loading="lazy"><img src="./p7-4.jpg" alt="Armiračko-betonski radovi Zagreb, Medveščak — stambena zgrada, DAGDA Usluge" loading="lazy"><button class="pc-arr left" onclick="slideCard(6,-1,true)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></button><button class="pc-arr right" onclick="slideCard(6,1,true)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button><div class="pc-dots"><button class="pc-dot on" onclick="slideCard(6,0)"></button><button class="pc-dot" onclick="slideCard(6,1)"></button><button class="pc-dot" onclick="slideCard(6,2)"></button><button class="pc-dot" onclick="slideCard(6,3)"></button></div></div><div class="pc-ov"><div class="pc-badge live" data-t="p7.badge">В РОБОТІ<br><small>з березня 2026</small></div><div class="pc-bottom"><div class="pc-name" data-t="p7.name">Житловий будинок, Медвещак, Загреб</div><div class="pc-type" data-t="p7.type">арматурно-бетонні роботи</div><div class="pc-inv" data-t="p7.inv">інвестор: DAGDA USLUGE d.o.o.</div></div></div></div>
     </div>
   </div>
 </section>
@@ -482,6 +501,13 @@ footer{background:var(--bg-deep);padding:44px 48px}
     </div>
   </div>
 </section>
+
+<div class="tband">
+  <div class="tb-mq"><div class="tb-track">
+    <div class="tb-set"><img class="tb-cert" src="./cert-aaa-2026.png" alt="AAA bonitetni certifikat — SIGURHAUS d.o.o., 2026" loading="lazy" width="598" height="98"><span class="tb-dot"></span><span class="tb-word">BONITETNA IZVRSNOST 2026</span><span class="tb-dot"></span><span class="tb-word">NIZAK POSLOVNI RIZIK</span><span class="tb-dot"></span><span class="tb-word">PROVJERENA STABILNOST POSLOVANJA</span><span class="tb-dot"></span></div>
+    <div class="tb-set" aria-hidden="true"><img class="tb-cert" src="./cert-aaa-2026.png" alt="AAA bonitetni certifikat — SIGURHAUS d.o.o., 2026" loading="lazy" width="598" height="98"><span class="tb-dot"></span><span class="tb-word">BONITETNA IZVRSNOST 2026</span><span class="tb-dot"></span><span class="tb-word">NIZAK POSLOVNI RIZIK</span><span class="tb-dot"></span><span class="tb-word">PROVJERENA STABILNOST POSLOVANJA</span><span class="tb-dot"></span></div>
+  </div></div>
+</div>
 
 <section id="reviews">
   <div class="rev-wrap rv">
@@ -585,6 +611,8 @@ footer{background:var(--bg-deep);padding:44px 48px}
 <script>
 const L={
 uk:{
+"p7.badge":"В РОБОТІ<br><small>з березня 2026</small>","p7.name":"Житловий будинок, Медвещак, Загреб","p7.type":"арматурно-бетонні роботи","p7.inv":"інвестор: DAGDA USLUGE d.o.o.",
+"p6.badge":"В РОБОТІ<br><small>з червня 2026</small>","p6.name":"Житловий будинок, Доня Стубіца","p6.type":"арматурно-бетонні роботи","p6.inv":"інвестор: NGH Gradnja d.o.o.",
 "nav.svc":"Послуги","nav.proj":"Портфоліо","nav.ct":"Контакти","nav.leg":"Юридична інформація","nav.how":"Як це працює","nav.cta":"Консультація",
 "hero.chip":"Будівництво у Хорватії","hero.t1":"Реалізуємо будівельні проєкти в Хорватії","hero.t2":"від фундаменту до здачі",
 "hero.sub":"SIGURHAUS — будівельна компанія в Хорватії. Монолітні роботи та будівництво під ключ для інвесторів. Повний контроль на всіх етапах.",
@@ -620,6 +648,8 @@ uk:{
 "ft.brand":"Будівництво під ключ та монолітні роботи в Хорватії.","ft.c1":"Компанія","ft.c2":"Послуги","ft.c3":"Контакти","ft.s1":"Будівництво під ключ","ft.s2":"Монолітні роботи","ft.s3":"Консультації"
 },
 en:{
+"p7.badge":"IN PROGRESS<br><small>since March 2026</small>","p7.name":"Residential building, Medveščak, Zagreb","p7.type":"reinforcement and concrete works","p7.inv":"investor: DAGDA USLUGE d.o.o.",
+"p6.badge":"IN PROGRESS<br><small>since June 2026</small>","p6.name":"Residential building, Donja Stubica","p6.type":"reinforcement and concrete works","p6.inv":"investor: NGH Gradnja d.o.o.",
 "nav.svc":"Services","nav.proj":"Portfolio","nav.ct":"Contact","nav.leg":"Legal Info","nav.how":"How It Works","nav.cta":"Consultation",
 "hero.chip":"Construction in Croatia","hero.t1":"Delivering construction projects in Croatia","hero.t2":"from foundation to handover",
 "hero.sub":"SIGURHAUS is a construction company in Croatia. Monolithic works and turnkey construction for investors. Full control at every stage.",
@@ -655,6 +685,8 @@ en:{
 "ft.brand":"Turnkey construction and monolithic works in Croatia.","ft.c1":"Company","ft.c2":"Services","ft.c3":"Contact","ft.s1":"Turnkey construction","ft.s2":"Monolithic works","ft.s3":"Consultations"
 },
 hr:{
+"p7.badge":"U TIJEKU<br><small>od ožujka 2026</small>","p7.name":"Stambena zgrada, Medveščak, Zagreb","p7.type":"armiračko-betonski radovi","p7.inv":"investitor: DAGDA USLUGE d.o.o.",
+"p6.badge":"U TIJEKU<br><small>od lipnja 2026</small>","p6.name":"Stambena zgrada, Donja Stubica","p6.type":"armiračko-betonski radovi","p6.inv":"investitor: NGH Gradnja d.o.o.",
 "nav.svc":"Usluge","nav.proj":"Portfelj","nav.ct":"Kontakt","nav.leg":"Pravne informacije","nav.how":"Kako radimo","nav.cta":"Konzultacije",
 "hero.chip":"Građevinarstvo u Hrvatskoj","hero.t1":"Realiziramo građevinske projekte u Hrvatskoj","hero.t2":"od temelja do predaje",
 "hero.sub":"SIGURHAUS je građevinska tvrtka u Hrvatskoj. Monolitni radovi i gradnja pod ključ za investitore. Potpuna kontrola u svakoj fazi.",
@@ -871,7 +903,7 @@ document.addEventListener('click',e=>{const f=document.querySelector('.ph-field'
 
 
 /* Project card slider */
-var cardSlides=[0,0,0,0,0];
+var cardSlides=[0,0,0,0,0,0,0];
 function slideCard(ci,dir,manual){
   var card=document.querySelector('[data-card="'+ci+'"]');
   if(!card)return;
@@ -884,7 +916,7 @@ function slideCard(ci,dir,manual){
   imgs.forEach(function(img,i){img.classList.toggle('active',i===cur)});
   dots.forEach(function(dot,i){dot.classList.toggle('on',i===cur)});
 }
-setInterval(function(){for(var i=0;i<5;i++)slideCard(i,1,true)},10000);
+setInterval(function(){for(var i=0;i<7;i++)slideCard(i,1,true)},10000);
 
 buildFAQ();buildLegal();buildRevs();buildPhList();
 </script>
